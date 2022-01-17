@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/vBottomBarIcon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:src="@drawable/maple_sample_3"/>
+    <TextView
+        android:id="@+id/vBottomBarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="新聞"
+        android:textColor="@drawable/selector_bottom_bar_title"
+        android:textSize="18dp" />
+</LinearLayout>

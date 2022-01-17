@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!--新聞列表-->
+    <color name="bottom_bar_title_select">#362d26</color>
+    <color name="bottom_bar_title_unselect">#c8b9ad</color>
+    <!--分類tab-->
+    <color name="tab_indicator">#f2bc4d</color>
+    <color name="tab_select_text">#ffffff</color>
+    <color name="tab_unselect_text">#8d7c6b</color>
+    <color name="tab_fixed">#2c76ff</color>
+    <color name="tab_bg">#cdae90</color>
+</resources>

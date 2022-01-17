@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml>
+    <item
+        id="news"
+        select="true"
+        selector="selector_news"
+        title="晚餐" />
+    <item
+        id="project"
+        selector="selector_project"
+        title="就要" />
+
+    <item
+        id="live"
+        selector="selector_live"
+        title="常吃" />
+    <item
+        id="video"
+        selector="selector_video"
+        title="三媽" />
+
+    <item
+        id="picture"
+        selector="selector_picture"
+        title="臭臭鍋" />
+
+</xml>

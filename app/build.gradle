@@ -1,0 +1,167 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.set.app.practiceappfoundation"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        applicationVariants.all { variant ->
+            def today = new Date()
+            variant.outputs.each { output ->
+                def fileName
+                if (output.name == 'debug') {
+                    fileName = "debug_" + defaultConfig.versionName + "_" + today.format("yyyyMMdd") + ".apk"
+                } else {
+                    fileName = "release_" + defaultConfig.versionName + "_" + today.format("yyyyMMdd") + ".apk"
+                }
+                output.outputFileName = fileName
+            }
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    viewBinding {
+        enabled = true
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(include: '*.jar', dir: 'libs')
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.2.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+
+    //Rxjava
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex:rxjava:1.2.0'
+
+    //ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:2.2.0"
+
+    //tabLayout
+    implementation 'com.android.support:design:29.0.0'
+    implementation "com.google.android.material:material:1.4.0-alpha01"
+
+    //SwipeRefreshLayout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //To Support MultiDex
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //Timber DebugLog
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //推播
+    implementation 'com.google.firebase:firebase-messaging:23.0.0'
+
+    //webkit
+    implementation "androidx.webkit:webkit:1.3.0-rc02"
+
+    //外開網頁
+    implementation 'androidx.browser:browser:1.2.0'
+
+    //ViewPage2
+    implementation 'androidx.viewpager2:viewpager2:1.1.0-alpha01'
+
+    //youtube
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+
+    //Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+
+
+    //exoplayer
+    implementation "com.google.android.exoplayer:exoplayer:$exoplayer_version"
+    implementation "com.google.android.exoplayer:extension-ima:$exoplayer_version"
+    implementation "com.google.android.exoplayer:exoplayer-core:$exoplayer_version"
+    implementation "com.google.android.exoplayer:exoplayer-dash:$exoplayer_version"
+    implementation "com.google.android.exoplayer:exoplayer-ui:$exoplayer_version"
+
+    //firebase
+    implementation 'com.google.firebase:firebase-analytics-ktx:17.5.0'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:17.2.1'
+
+    //seekbar
+    implementation 'com.github.warkiz.tickseekbar:tickseekbar:0.1.4'
+
+    //DFP廣告
+    implementation 'com.google.android.gms:play-services-ads:19.4.0'
+
+    //gif
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+
+    //matomo
+    implementation 'org.matomo.sdk:tracker:4.1.2'
+
+    //firebase analytics
+    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+
+    //qr code
+    implementation 'com.google.zxing:core:3.3.3'
+    implementation('com.journeyapps:zxing-android-embedded:3.6.0') { transitive = false }
+
+    //comscore
+    implementation 'com.comscore:android-analytics:6.7.2'
+}
