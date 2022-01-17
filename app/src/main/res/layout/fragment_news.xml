@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.practiceappfoundation.news.NewsFragment">
+    tools:context="com.setDDG.news.NewsFragment">
 
     <LinearLayout
         android:id="@+id/vNewsTabsLayout"
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.practiceappfoundation.customView.CustomTabLayout
+        <com.setDDG.customView.CustomTabLayout
             android:id="@+id/vFixedTabLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
             app:tabIndicatorFullWidth="false"
             app:tabMode="scrollable" />
 
-        <com.practiceappfoundation.customView.CustomTabLayout
+        <com.setDDG.customView.CustomTabLayout
             android:id="@+id/vNewsTabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

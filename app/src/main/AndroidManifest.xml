@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
         <activity
-            android:name="com.practiceappfoundation.homePage.HomePageActivity"
+            android:name="com.setDDG.homePage.HomePageActivity"
             android:exported="true"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTask"
