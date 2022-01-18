@@ -11,8 +11,8 @@
         android:theme="@style/NoActionBar">
         <activity
             android:name="com.setDDG.homePage.HomePageActivity"
-            android:exported="true"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
             android:launchMode="singleTask"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -20,6 +20,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.webview.WebViewActivity"
+            android:launchMode="singleTask">
         </activity>
     </application>
 
