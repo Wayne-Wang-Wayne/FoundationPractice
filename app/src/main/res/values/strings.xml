@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Practice App Foundation</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="setting_font_size">字體大小</string>
+    <string name="share">分享</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

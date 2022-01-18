@@ -1,4 +1,4 @@
-package com.set.app.entertainment.webview
+package com.webview
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -17,16 +17,18 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.webkit.WebSettingsCompat
 import androidx.webkit.WebSettingsCompat.DARK_STRATEGY_PREFER_WEB_THEME_OVER_USER_AGENT_DARKENING
 import androidx.webkit.WebViewFeature
-import com.set.app.entertainment.R
-import com.set.app.entertainment.util.StatusBarUtil
-import com.set.app.entertainment.webview.viewmodel.WebViewModel
-import kotlinx.android.synthetic.main.activity_web_view.*
+import com.rockex6.practiceappfoundation.R
+import com.rockex6.practiceappfoundation.databinding.ActivityWebViewBinding
+import com.webview.viewmodel.WebViewModel
+import com.setDDG.util.StatusBarUtil
+
 
 
 class WebViewActivity : AppCompatActivity() {
     private val TAG: String = javaClass.simpleName
     lateinit var webViewModel: WebViewModel
     private var chromePackage: String = "com.android.chrome"
+    private lateinit var binding: ActivityWebViewBinding
 
     companion object {
         const val WEB_URL = "web_url"
@@ -43,7 +45,9 @@ class WebViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_web_view)
+        binding = ActivityWebViewBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         webViewModel = ViewModelProvider(this).get(WebViewModel::class.java)
         intent.extras?.let { webViewModel.setWebViewActivity(it) }
@@ -71,22 +75,22 @@ class WebViewActivity : AppCompatActivity() {
     @SuppressLint("SetJavaScriptEnabled")
     fun setWebView(url: String, title: String) {
 
-        vWebViewToolbar.setTitle(title)
-        vWebViewToolbar.setTitleColor(R.color.white)
-        val webSettings = vWebView.settings
+        binding.vWebViewToolbar.setTitle(title)
+        binding.vWebViewToolbar.setTitleColor(R.color.white)
+        val webSettings = binding.vWebView.settings
         webSettings.setSupportZoom(true)
         webSettings.builtInZoomControls = false
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             webSettings.safeBrowsingEnabled = true
         }
         webSettings.javaScriptEnabled = true
-        vWebView.webViewClient = object : WebViewClient() {
+        binding.vWebView.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView, url: String) {
-                vWebViewToolbar.setTitle(view.title)
+                binding.vWebViewToolbar.setTitle(view.title)
             }
         }
-        vWebView.visibility = View.VISIBLE
-        vWebView.loadUrl(url)
+        binding.vWebView.visibility = View.VISIBLE
+        binding.vWebView.loadUrl(url)
     }
 
     fun setCustomTabsIntent(url: String) {
@@ -121,10 +125,10 @@ class WebViewActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        vWebView?.let {
-            vWebView.onPause()
-            vWebView.destroy()
-            vWebView.clearHistory()
+        binding.vWebView?.let {
+            binding.vWebView.onPause()
+            binding.vWebView.destroy()
+            binding.vWebView.clearHistory()
         }
     }
 }

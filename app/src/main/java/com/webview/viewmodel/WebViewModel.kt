@@ -1,8 +1,8 @@
-package com.set.app.entertainment.webview.viewmodel
+package com.webview.viewmodel
 
 import android.os.Bundle
 import androidx.lifecycle.MutableLiveData
-import com.set.app.entertainment.basicClass.BaseViewModel
+import com.setDDG.basicClass.BaseViewModel
 
 class WebViewModel() : BaseViewModel() {
 

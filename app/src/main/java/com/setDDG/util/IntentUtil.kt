@@ -11,7 +11,7 @@ import android.os.Bundle
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.multidex.BuildConfig
 import com.rockex6.practiceappfoundation.R
-import com.set.app.entertainment.webview.WebViewActivity
+import com.webview.WebViewActivity
 import java.util.*
 
 object IntentUtil {
