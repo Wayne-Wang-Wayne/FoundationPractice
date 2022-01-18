@@ -1,4 +1,4 @@
-package com.set.app.entertainment.api
+package com.setDDG.api
 
 import okhttp3.Interceptor
 import okhttp3.Request

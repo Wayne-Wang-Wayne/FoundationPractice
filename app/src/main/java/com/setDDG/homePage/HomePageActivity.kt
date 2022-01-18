@@ -12,6 +12,7 @@ import com.setDDG.news.NewsFragment
 import com.setDDG.util.StatusBarUtil
 import com.rockex6.practiceappfoundation.R
 import com.rockex6.practiceappfoundation.databinding.ActivityHomePageBinding
+import com.setDDG.util.IntentUtil
 
 class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
 
@@ -76,7 +77,10 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
             "project" -> changePage(NewsFragment())
             "live" -> changePage(NewsFragment())
             "video" -> changePage(NewsFragment())
-            "picture" -> changePage(NewsFragment())
+            "picture" -> {
+                changePage(NewsFragment())
+                IntentUtil.startUrl(this,"https://stackoverflow.com/questions/17504169/how-to-get-installed-applications-in-android-and-no-system-apps")
+            }
         }
     }
 

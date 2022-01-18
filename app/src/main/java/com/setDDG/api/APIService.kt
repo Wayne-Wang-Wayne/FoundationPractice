@@ -4,11 +4,14 @@ import android.content.Context
 import com.setDDG.homePage.BottomBarModel
 import com.setDDG.news.NewsTabsModel
 import com.rockex6.practiceappfoundation.R
+import com.set.app.entertainment.api.APIManager
+import com.setDDG.util.AESUtil
 import io.reactivex.Single
 import org.xmlpull.v1.XmlPullParser
 
 
 object APIService {
+    var isNeedEncrypt = true
 
 
     fun getBottomBar(context: Context): Single<ArrayList<BottomBarModel>> {
@@ -68,6 +71,23 @@ object APIService {
                 it.onSuccess(newsTabsModels)
 
             }
+    }
+
+    private fun <T> getApi(domain: String, cls: Class<T>): T {
+        return APIManager.getRetrofit(domain)
+            .create(cls)
+    }
+
+    private fun getEncryptHeader(
+        data: String?, key: String?, iv: String?): HashMap<String, String> {
+        val headers = HashMap<String, String>()
+        headers[APIHeader.CONTENT_TYPE] = APIHeader.APPLICATION_JSON
+        headers[APIHeader.ACCEPT] = APIHeader.APPLICATION_JSON
+        headers[APIHeader.ACCEPT_CHARSET] = APIHeader.UTF8
+        if (isNeedEncrypt) headers["Authorization"] = "Bearer ${
+            AESUtil.encrypt(data, key, iv)
+        }"
+        return headers
     }
 
 
