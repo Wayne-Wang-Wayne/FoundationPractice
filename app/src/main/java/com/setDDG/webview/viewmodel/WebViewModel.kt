@@ -1,4 +1,4 @@
-package com.webview.viewmodel
+package com.setDDG.webview.viewmodel
 
 import android.os.Bundle
 import androidx.lifecycle.MutableLiveData
