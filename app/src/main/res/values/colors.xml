@@ -63,5 +63,6 @@
     <color name="color727b8b">#727b8b</color>
     <color name="color929292">#929292</color>
     <color name="color3261b2">#3261b2</color>
+    <color name="transparent">#00000000</color>
     <!--6.0-->
 </resources>

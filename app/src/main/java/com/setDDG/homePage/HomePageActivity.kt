@@ -3,7 +3,6 @@ package com.setDDG.homePage
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -11,14 +10,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.setDDG.news.NewsFragment
 import com.setDDG.util.StatusBarUtil
 import com.rockex6.practiceappfoundation.R
-import com.rockex6.practiceappfoundation.databinding.ActivityHomePageBinding
 import com.setDDG.util.IntentUtil
+import kotlinx.android.synthetic.main.activity_home_page.*
+import kotlinx.android.synthetic.main.toolbar_layout_with_title.*
 
 class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
 
-    private lateinit var binding: ActivityHomePageBinding
     private var mMenu: Menu? = null
-    private lateinit var vToolbar: Toolbar
     private lateinit var homePageViewModel: HomePageViewModel
 
     override fun onStart() {
@@ -28,11 +26,8 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomePageBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
-        vToolbar = findViewById(R.id.vToolbarWithTitle)
-        setSupportActionBar(vToolbar)
+        setContentView(R.layout.activity_home_page)
+        setSupportActionBar(vToolbarWithTitle)
         initToolBar()
         homePageViewModel = ViewModelProvider(this).get(HomePageViewModel::class.java)
         observeViewModel()
@@ -42,7 +37,7 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
     private fun observeViewModel() {
         homePageViewModel.bottomBarData.observe(this, Observer { bottomBarModels ->
             bottomBarModels?.let {
-                binding.bottomBar.apply {
+                bottom_bar.apply {
                     val gridLayoutManager = GridLayoutManager(context, 5)
                     val bottomBarAdapter = BottomBarAdapter(context, it, this@HomePageActivity)
                     layoutManager = gridLayoutManager
@@ -60,12 +55,12 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
     }
 
     private fun initToolBar() {
-        setSupportActionBar(vToolbar)
+        setSupportActionBar(vToolbarWithTitle)
         if (supportActionBar != null) {
             supportActionBar!!.setHomeButtonEnabled(true)
-            vToolbar.setNavigationIcon(R.drawable.ic_setting)
+            vToolbarWithTitle.setNavigationIcon(R.drawable.ic_setting)
             supportActionBar!!.title = ""
-            vToolbar.setNavigationOnClickListener {
+            vToolbarWithTitle.setNavigationOnClickListener {
                 //設定頁
             }
         }
@@ -86,10 +81,10 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
 
     private fun changePage(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-            .replace(binding.homePageContent.id, fragment)
+            .replace(home_page_content.id, fragment)
         supportFragmentManager.executePendingTransactions()
         supportFragmentManager.beginTransaction()
-            .replace(binding.homePageContent.id, fragment)
+            .replace(home_page_content.id, fragment)
             .commitAllowingStateLoss()
     }
 }
