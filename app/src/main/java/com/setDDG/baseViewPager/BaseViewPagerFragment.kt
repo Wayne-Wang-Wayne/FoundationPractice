@@ -13,6 +13,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.rockex6.practiceappfoundation.R
 import com.setDDG.glideFunction.GlideFunctionFragment
+import com.setDDG.weatherViewFunction.WeatherViewFunctionFragment
 import com.setDDG.webViewFunction.WebViewFunctionFragment
 import kotlinx.android.synthetic.main.fragment_base_view_pager.*
 import kotlinx.android.synthetic.main.retry_layout.view.*
@@ -79,6 +80,8 @@ open class BaseViewPagerFragment : Fragment() {
                             GlideFunctionFragment.newInstance())
                         "open_web_view" -> newsListFragments.add(
                             WebViewFunctionFragment.newInstance())
+                        "weather_view" -> newsListFragments.add(
+                            WeatherViewFunctionFragment.newInstance())
                     }
 
                 }

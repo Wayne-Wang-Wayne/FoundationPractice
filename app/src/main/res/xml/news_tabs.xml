@@ -6,4 +6,7 @@
     <item
         id="open_web_view"
         title="開webView" />
+    <item
+        id="weather_view"
+        title="下雪特效" />
 </xml>

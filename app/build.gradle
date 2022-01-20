@@ -164,4 +164,6 @@ dependencies {
 
     //comscore
     implementation 'com.comscore:android-analytics:6.7.2'
+    //天氣特效
+    implementation 'com.github.MatteoBattilana:WeatherView:3.0.0'
 }

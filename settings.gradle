@@ -3,11 +3,16 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url  'https://jitpack.io'
+            allowInsecureProtocol = true
+        }
         jcenter() // Warning: this repository is going to shut down soon
         maven {
             url 'http://comscore.bintray.com/Analytics'
             allowInsecureProtocol = true
         }
+
     }
 }
 rootProject.name = "SetDDG"

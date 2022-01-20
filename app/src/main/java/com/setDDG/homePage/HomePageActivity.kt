@@ -32,6 +32,9 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
         homePageViewModel = ViewModelProvider(this).get(HomePageViewModel::class.java)
         observeViewModel()
         homePageViewModel.fetchBottomBar()
+
+        //不需要，是為了不讓bottomBar起作用才加的
+        changePage(BaseViewPagerFragment())
     }
 
     private fun observeViewModel() {
@@ -68,13 +71,13 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
 
     override fun onBottomBarClick(id: String) {
         when (id) {
-            "news" -> changePage(BaseViewPagerFragment())
-            "project" -> changePage(BaseViewPagerFragment())
-            "live" -> changePage(BaseViewPagerFragment())
-            "video" -> changePage(BaseViewPagerFragment())
-            "picture" -> {
-                changePage(BaseViewPagerFragment())
-              }
+//            "news" -> changePage(BaseViewPagerFragment())
+//            "project" -> changePage(BaseViewPagerFragment())
+//            "live" -> changePage(BaseViewPagerFragment())
+//            "video" -> changePage(BaseViewPagerFragment())
+//            "picture" -> {
+//                changePage(BaseViewPagerFragment())
+//              }
         }
     }
 
