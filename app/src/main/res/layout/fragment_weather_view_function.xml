@@ -1,25 +1,39 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.setDDG.weatherViewFunction.WeatherViewFunctionFragment">
 
+    <Button
+        android:id="@+id/switchWeatherBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_100dp"
+        android:text="換天氣"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ImageView
+        android:id="@+id/weatherBG"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/weather_view_background"/>
+        android:layout_height="match_parent" />
 
     <com.github.matteobattilana.weather.WeatherView
         android:id="@+id/weather_view_one"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
+
     <com.github.matteobattilana.weather.WeatherView
         android:id="@+id/weather_view_two"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
     <com.github.matteobattilana.weather.WeatherView
         android:id="@+id/weather_view_three"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
