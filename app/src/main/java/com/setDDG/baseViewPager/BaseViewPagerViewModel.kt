@@ -1,4 +1,4 @@
-package com.setDDG.news
+package com.setDDG.baseViewPager
 
 import android.app.Application
 import androidx.annotation.NonNull
@@ -7,7 +7,7 @@ import com.setDDG.api.APIService
 import com.setDDG.basicClass.BaseAndroidViewModel
 import io.reactivex.observers.DisposableSingleObserver
 
- class NewsViewModel(@NonNull application: Application) : BaseAndroidViewModel(application) {
+ class BaseViewPagerViewModel(@NonNull application: Application) : BaseAndroidViewModel(application) {
     private val TAG: String = javaClass.simpleName
     val newsTabs = MutableLiveData<List<NewsTabsModel>>()
 

@@ -2,7 +2,7 @@ package com.setDDG.api
 
 import android.content.Context
 import com.setDDG.homePage.BottomBarModel
-import com.setDDG.news.NewsTabsModel
+import com.setDDG.baseViewPager.NewsTabsModel
 import com.rockex6.practiceappfoundation.R
 import com.set.app.entertainment.api.APIManager
 import com.setDDG.util.AESUtil
@@ -54,11 +54,8 @@ object APIService {
                         if (eventType == XmlPullParser.START_TAG) {
                             if (xrp.name == "item") {
                                 val newsTabsModel = NewsTabsModel()
-                                newsTabsModel.type = xrp.getAttributeValue(null, "type")
                                 newsTabsModel.id = xrp.getAttributeValue(null, "id")
                                 newsTabsModel.title = xrp.getAttributeValue(null, "title")
-                                newsTabsModel.url =
-                                    xrp.getAttributeValue(null, "url")
                                 newsTabsModels.add(newsTabsModel)
                             }
 

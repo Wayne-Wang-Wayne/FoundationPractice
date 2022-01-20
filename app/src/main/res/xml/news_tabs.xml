@@ -1,33 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xml>
     <item
-        type="news"
-        title="true"
-        id="selector_news"
-        url="你好" />
+        id="glide_picture"
+        title="glide圖片" />
     <item
-        type="news"
-        title="true"
-        id="selector_news"
-        url="今天" />
-    <item
-        type="news"
-        title="true"
-        id="selector_news"
-        url="天氣" />
-    <item
-        type="news"
-        title="true"
-        id="selector_news"
-        url="不錯" />
-    <item
-        type="news"
-        title="true"
-        id="selector_news"
-        url="但是" />
-    <item
-        type="news"
-        title="true"
-        id="selector_news"
-        url="好冷" />
+        id="open_web_view"
+        title="開webView" />
 </xml>

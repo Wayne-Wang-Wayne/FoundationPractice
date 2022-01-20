@@ -1,4 +1,4 @@
-package com.setDDG.news
+package com.setDDG.baseViewPager
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,55 +12,56 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.testList.TestListFragment
-import kotlinx.android.synthetic.main.fragment_news.*
+import com.setDDG.glideFunction.GlideFunctionFragment
+import com.setDDG.webViewFunction.WebViewFunctionFragment
+import kotlinx.android.synthetic.main.fragment_base_view_pager.*
 import kotlinx.android.synthetic.main.retry_layout.view.*
 
 
-open class NewsFragment : Fragment() {
-    private lateinit var newsViewModel: NewsViewModel
+open class BaseViewPagerFragment : Fragment() {
+    private lateinit var baseViewPagerViewModel: BaseViewPagerViewModel
 
     companion object {
-        fun newInstance() = NewsFragment()
+        fun newInstance() = BaseViewPagerFragment()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_news, container, false)
+        return inflater.inflate(R.layout.fragment_base_view_pager, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        newsViewModel = ViewModelProvider(this).get(NewsViewModel::class.java)
-        newsViewModel.fetchNewsTabs()
+        baseViewPagerViewModel = ViewModelProvider(this).get(BaseViewPagerViewModel::class.java)
+        baseViewPagerViewModel.fetchNewsTabs()
         observeViewModel()
     }
 
     private fun observeViewModel() {
-        newsViewModel.isLoading.observe(viewLifecycleOwner, { isLoading ->
+        baseViewPagerViewModel.isLoading.observe(viewLifecycleOwner, { isLoading ->
             isLoading?.let {
                 vProgress.visibility = if (it) View.VISIBLE else View.GONE
             }
         })
-        newsViewModel.newsTabs.observe(viewLifecycleOwner, Observer { newsTabs ->
+        baseViewPagerViewModel.newsTabs.observe(viewLifecycleOwner, Observer { newsTabs ->
             newsTabs.let {
                 initViewPager(newsTabs)
                 //設置tab
                 TabLayoutMediator(vNewsTabLayout, vViewPager) { tab, position ->
                     tab.setCustomView(R.layout.item_tab)
                     tab.customView?.findViewById<TextView>(R.id.vTabTitle)?.text =
-                        newsTabs[position].url
+                        newsTabs[position].title
                     vViewPager.setCurrentItem(tab.position, true)
                 }.attach()
             }
         })
-        newsViewModel.errorMessage.observe(viewLifecycleOwner, Observer { message ->
+        baseViewPagerViewModel.errorMessage.observe(viewLifecycleOwner, Observer { message ->
             message?.let {
                 retryLayout.vRefreshLayout.visibility = View.VISIBLE
                 retryLayout.vErrorMessage.text = it
                 retryLayout.vRefreshLayout.setOnClickListener {
                     retryLayout.vRefreshLayout.visibility = View.GONE
-                    newsViewModel.fetchNewsTabs()
+                    baseViewPagerViewModel.fetchNewsTabs()
                 }
             }
 
@@ -71,13 +72,18 @@ open class NewsFragment : Fragment() {
     private fun initViewPager(newsTabs: List<NewsTabsModel>) {
         activity?.let {
             it.runOnUiThread {
-                val newsListFragments = ArrayList<TestListFragment>()
+                val newsListFragments = ArrayList<Fragment>()
                 newsTabs.forEach { newsTab ->
-                    val newsListFragment = TestListFragment.newInstance()
-                    newsListFragments.add(newsListFragment)
+                    when (newsTab.id) {
+                        "glide_picture" -> newsListFragments.add(
+                            GlideFunctionFragment.newInstance())
+                        "open_web_view" -> newsListFragments.add(
+                            WebViewFunctionFragment.newInstance())
+                    }
+
                 }
                 vViewPager.apply {
-                    adapter = PagerFragmentAdapter(this@NewsFragment, newsListFragments)
+                    adapter = PagerFragmentAdapter(this@BaseViewPagerFragment, newsListFragments)
                     offscreenPageLimit = 1
                 }
                 vViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {

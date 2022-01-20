@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.setDDG.news.NewsFragment
+import com.setDDG.baseViewPager.BaseViewPagerFragment
 import com.setDDG.util.StatusBarUtil
 import com.rockex6.practiceappfoundation.R
 import com.setDDG.util.IntentUtil
@@ -68,14 +68,13 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
 
     override fun onBottomBarClick(id: String) {
         when (id) {
-            "news" -> changePage(NewsFragment())
-            "project" -> changePage(NewsFragment())
-            "live" -> changePage(NewsFragment())
-            "video" -> changePage(NewsFragment())
+            "news" -> changePage(BaseViewPagerFragment())
+            "project" -> changePage(BaseViewPagerFragment())
+            "live" -> changePage(BaseViewPagerFragment())
+            "video" -> changePage(BaseViewPagerFragment())
             "picture" -> {
-                changePage(NewsFragment())
-                IntentUtil.startUrl(this,"https://stackoverflow.com/questions/17504169/how-to-get-installed-applications-in-android-and-no-system-apps")
-            }
+                changePage(BaseViewPagerFragment())
+              }
         }
     }
 
