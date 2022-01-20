@@ -5,8 +5,10 @@ import com.setDDG.homePage.BottomBarModel
 import com.setDDG.baseViewPager.NewsTabsModel
 import com.rockex6.practiceappfoundation.R
 import com.set.app.entertainment.api.APIManager
+import com.set.app.entertainment.videomanager.VideoModel
 import com.setDDG.util.AESUtil
 import io.reactivex.Single
+import io.reactivex.observers.DisposableSingleObserver
 import org.xmlpull.v1.XmlPullParser
 
 
@@ -68,6 +70,15 @@ object APIService {
                 it.onSuccess(newsTabsModels)
 
             }
+    }
+    fun getVideoInfo(context: Context): Single<VideoModel> {
+        return Single.create{
+            val videoModel = VideoModel()
+            videoModel.url = "https://www.youtube.com/watch?v=430N__0EzI8&t=122s&ab_channel=Nintendo%E5%85%AC%E5%BC%8F%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB"
+            videoModel.imageUrl = "https://i.ytimg.com/vi/C3eTzM0M4E0/maxresdefault.jpg"
+            it.onSuccess(videoModel)
+        }
+
     }
 
     private fun <T> getApi(domain: String, cls: Class<T>): T {

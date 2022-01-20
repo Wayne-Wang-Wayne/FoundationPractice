@@ -105,7 +105,11 @@ class WebViewActivity : AppCompatActivity() {
         mCustomTabsIntent.intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
         mCustomTabsIntent.intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         mCustomTabsIntent.intent.setPackage(chromePackage)
-        mCustomTabsIntent.launchUrl(this, Uri.parse(url))
+        try{
+            mCustomTabsIntent.launchUrl(this, Uri.parse(url))
+        }catch (e:Exception){
+            mCustomTabsIntent.launchUrl(this, Uri.parse("https://www.google.com.tw/"))
+        }
         finish()
     }
 

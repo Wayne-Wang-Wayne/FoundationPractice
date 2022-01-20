@@ -15,6 +15,7 @@ import com.rockex6.practiceappfoundation.R
 import com.setDDG.glideFunction.GlideFunctionFragment
 import com.setDDG.weatherViewFunction.WeatherViewFunctionFragment
 import com.setDDG.webViewFunction.WebViewFunctionFragment
+import com.setDDG.yTPlayerFunction.YTPlayerFunctionFragment
 import kotlinx.android.synthetic.main.fragment_base_view_pager.*
 import kotlinx.android.synthetic.main.retry_layout.view.*
 
@@ -82,6 +83,8 @@ open class BaseViewPagerFragment : Fragment() {
                             WebViewFunctionFragment.newInstance())
                         "weather_view" -> newsListFragments.add(
                             WeatherViewFunctionFragment.newInstance())
+                        "youtube_player_view" -> newsListFragments.add(
+                            YTPlayerFunctionFragment.newInstance())
                     }
 
                 }

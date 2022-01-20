@@ -3,15 +3,12 @@ package com.set.app.entertainment.videomanager
 import android.app.Activity
 import android.app.Dialog
 import android.content.pm.ActivityInfo
-import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.setDDG.util.MatomoTracker
-import com.setDDG.util.MatomoTracker.trackEvent
 import java.util.*
 
 class VideoPlayCallback {
@@ -165,6 +162,6 @@ class VideoPlayCallback {
     }
 
 }
-class VideoModel(){
 
-}
+data class VideoModel(
+    var imageUrl: String = "", var url: String = "")

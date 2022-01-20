@@ -32,11 +32,10 @@ class WebViewFunctionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        webViewButton.setOnClickListener {
-            IntentUtil.startUrl(mContext, webViewET.text.toString())
-            webViewET.setText("")
-        }
+            webViewButton.setOnClickListener {
 
-
+                    IntentUtil.startUrl(mContext, webViewET.text.toString())
+                    webViewET.setText("")
+            }
     }
 }

@@ -9,4 +9,7 @@
     <item
         id="weather_view"
         title="下雪特效" />
+    <item
+        id="youtube_player_view"
+        title="ＹT播放器" />
 </xml>
