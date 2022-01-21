@@ -23,11 +23,9 @@ import com.google.android.exoplayer2.ui.DefaultTimeBar
 import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
-import com.set.app.entertainment.videomanager.VideoPlayCallback
-import com.set.app.entertainment.videomanager.VideoPlayCallback.Companion.isFullScreen
-import com.set.app.entertainment.videomanager.VideoPlayCallback.Companion.onUpdatePlay
-import com.set.app.entertainment.videomanager.VideoPlayCallback.Companion.showFullScreenDialog
-import com.set.app.entertainment.videomanager.VideoPrepareInterFace
+import com.setDDG.videomanager.VideoPlayCallback.Companion.isFullScreen
+import com.setDDG.videomanager.VideoPlayCallback.Companion.onUpdatePlay
+import com.setDDG.videomanager.VideoPlayCallback.Companion.showFullScreenDialog
 import kotlinx.android.synthetic.main.exo_player_control_view.view.*
 import kotlinx.android.synthetic.main.item_exoplayer_controller.view.*
 import com.rockex6.practiceappfoundation.R
@@ -436,14 +434,6 @@ class ExoPlayerManager(
                         vExoTimeBar?.visibility = View.VISIBLE
                         vProgressBar?.visibility = View.INVISIBLE
                     }
-                    //讓滑動影片時，畫面不會亂跑
-//                    if(VideoPlayCallback.videoRecyclerView !=null){
-//                        VideoPlayCallback.stopVideoRecyclerViewScrolling(true)
-//                    }
-//                    if(VideoPlayCallback.videoContentViewPager !=null){
-//                        VideoPlayCallback.stopVideoViewPagerScrolling(true)
-//                    }
-//                    stopVideoScrolling?.stopVideoScrolling(true)
 
                     mIsScrolling = true
                     return true
@@ -454,6 +444,8 @@ class ExoPlayerManager(
             })
 
         val mGestureListener = View.OnTouchListener { v, event ->
+            //讓滑動影片時，畫面不會亂跑
+            v.parent.requestDisallowInterceptTouchEvent(true)
             if (gestureDetector.onTouchEvent(event)) {
                 return@OnTouchListener true
             }
@@ -474,15 +466,6 @@ class ExoPlayerManager(
                     } else {
                         setControllerShow(false)
                     }
-
-                    //讓滑動影片時，畫面不會亂跑
-//                    if(VideoPlayCallback.videoRecyclerView !=null){
-//                        VideoPlayCallback.stopVideoRecyclerViewScrolling(false)
-//                    }
-//                    if(VideoPlayCallback.videoContentViewPager !=null){
-//                        VideoPlayCallback.stopVideoViewPagerScrolling(false)
-//                    }
-//                    stopVideoScrolling?.stopVideoScrolling(false)
 
                 } else {
                     onClick(vExoPlayerController)

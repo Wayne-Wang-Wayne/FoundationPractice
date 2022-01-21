@@ -26,13 +26,10 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.ui.utils.TimeUtiliti
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.ui.views.YouTubePlayerSeekBar
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.ui.views.YouTubePlayerSeekBarListener
 import com.rockex6.practiceappfoundation.R
-import com.set.app.entertainment.videomanager.VideoInterFace
-import com.set.app.entertainment.videomanager.VideoPlayCallback
-import com.set.app.entertainment.videomanager.VideoPlayCallback.Companion.closeFullScreenDialog
-import com.set.app.entertainment.videomanager.VideoPlayCallback.Companion.isFullScreen
-import com.set.app.entertainment.videomanager.VideoPlayCallback.Companion.onUpdatePlay
-import com.set.app.entertainment.videomanager.VideoPlayCallback.Companion.showFullScreenDialog
-import com.set.app.entertainment.videomanager.VideoPrepareInterFace
+import com.setDDG.videomanager.VideoPlayCallback.Companion.closeFullScreenDialog
+import com.setDDG.videomanager.VideoPlayCallback.Companion.isFullScreen
+import com.setDDG.videomanager.VideoPlayCallback.Companion.onUpdatePlay
+import com.setDDG.videomanager.VideoPlayCallback.Companion.showFullScreenDialog
 import com.setDDG.baseViewPager.StopMainViewPagerScroll
 import com.setDDG.util.*
 import com.setDDG.util.UrlUtil.getYoutubeID
@@ -50,9 +47,7 @@ class YoutubeManager(
     var isSeekBar: Boolean,
     var isShowThumbnail: Boolean = true,
     val videoInterFace: VideoInterFace?,
-    private val videoPrepareInterFace: VideoPrepareInterFace?,
-    //此App多加的
-    private var stopMainViewPagerScroll: StopMainViewPagerScroll? = null
+    private val videoPrepareInterFace: VideoPrepareInterFace?
 ) : View.OnClickListener {
     private val TAG = "YoutubeManager"
     private var vYoutubePlay: ImageButton? = null
@@ -563,16 +558,6 @@ class YoutubeManager(
                         }
                         vVideoCover?.visibility = VISIBLE
                     }
-                    //讓滑動影片時，畫面不會亂跑
-                    //此App才加的
-                    stopMainViewPagerScroll?.stopScroll(true)
-//                    if (VideoPlayCallback.videoRecyclerView != null) {
-//                        VideoPlayCallback.stopVideoRecyclerViewScrolling(true)
-//                    }
-//                    if (VideoPlayCallback.videoContentViewPager != null) {
-//                        VideoPlayCallback.stopVideoViewPagerScrolling(true)
-//                    }
-//                    stopVideoScrolling?.stopVideoScrolling(true)
 
                     mIsScrolling = true
                     return true
@@ -584,6 +569,8 @@ class YoutubeManager(
             })
 
         val mGestureListener = OnTouchListener { v, event ->
+            //讓滑動影片時，畫面不會亂跑
+            v.parent.requestDisallowInterceptTouchEvent(true)
             if (gestureDetector.onTouchEvent(event)) {
                 return@OnTouchListener true
             }
@@ -619,18 +606,6 @@ class YoutubeManager(
                     } else {
                         vYoutubeControllerBar?.visibility = View.INVISIBLE
                     }
-
-
-                    //讓滑動影片時，畫面不會亂跑
-                    //此App才加的
-                    stopMainViewPagerScroll?.stopScroll(false)
-//                    if (VideoPlayCallback.videoRecyclerView != null) {
-//                        VideoPlayCallback.stopVideoRecyclerViewScrolling(false)
-//                    }
-//                    if (VideoPlayCallback.videoContentViewPager != null) {
-//                        VideoPlayCallback.stopVideoViewPagerScrolling(false)
-//                    }
-//                    stopVideoScrolling?.stopVideoScrolling(false)
 
                 } else {
                     onClick(vController)

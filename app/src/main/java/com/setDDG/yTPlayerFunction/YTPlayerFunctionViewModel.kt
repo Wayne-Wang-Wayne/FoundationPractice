@@ -3,7 +3,7 @@ package com.setDDG.yTPlayerFunction
 import android.app.Application
 import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
-import com.set.app.entertainment.videomanager.VideoModel
+import com.setDDG.videomanager.VideoModel
 import com.setDDG.api.APIService
 import com.setDDG.basicClass.BaseAndroidViewModel
 import io.reactivex.observers.DisposableSingleObserver

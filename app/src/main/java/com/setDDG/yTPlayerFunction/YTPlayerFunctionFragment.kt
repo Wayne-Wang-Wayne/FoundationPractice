@@ -10,16 +10,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.rockex6.practiceappfoundation.R
-import com.set.app.entertainment.videomanager.VideoPlayCallback.Companion.videoManager
-import com.setDDG.baseViewPager.StopMainViewPagerScroll
 import com.setDDG.util.screenViewDP
 import com.setDDG.videomanager.VideoManager
+import com.setDDG.videomanager.VideoPlayCallback.Companion.videoManager
 import kotlinx.android.synthetic.main.fragment_y_t_player_function.*
 import kotlin.properties.Delegates
 
 
-class YTPlayerFunctionFragment(private val stopMainViewPagerScroll: StopMainViewPagerScroll) :
-    Fragment() {
+class YTPlayerFunctionFragment : Fragment() {
 
     lateinit var mContext: Context
     private lateinit var yTPlayerFunctionViewModel: YTPlayerFunctionViewModel
@@ -35,8 +33,7 @@ class YTPlayerFunctionFragment(private val stopMainViewPagerScroll: StopMainView
     }
 
     companion object {
-        fun newInstance(stopMainViewPagerScroll: StopMainViewPagerScroll) =
-            YTPlayerFunctionFragment(stopMainViewPagerScroll)
+        fun newInstance() = YTPlayerFunctionFragment()
     }
 
 
@@ -55,7 +52,7 @@ class YTPlayerFunctionFragment(private val stopMainViewPagerScroll: StopMainView
         yTPlayerFunctionViewModel.videoListData.observe(viewLifecycleOwner, Observer { videoData ->
             videoManager =
                 VideoManager(mContext as Activity, videoData.url, vVideoPlayer, viewWidth, 0,
-                    videoData.imageUrl, true, stopMainViewPagerScroll)
+                    videoData.imageUrl, true)
 
         })
     }

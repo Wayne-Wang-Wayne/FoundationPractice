@@ -85,11 +85,7 @@ open class BaseViewPagerFragment : Fragment() {
                         "weather_view" -> newsListFragments.add(
                             WeatherViewFunctionFragment.newInstance())
                         "youtube_player_view" -> {
-                            newsListFragments.add(YTPlayerFunctionFragment.newInstance(object :StopMainViewPagerScroll{
-                                override fun stopScroll(flag: Boolean) {
-                                    vViewPager.isUserInputEnabled = !flag
-                                }
-                            }))
+                            newsListFragments.add(YTPlayerFunctionFragment.newInstance())
                         }
                         "carousel_pager" -> newsListFragments.add(
                             CarouselPagerFunctionFragment.newInstance())

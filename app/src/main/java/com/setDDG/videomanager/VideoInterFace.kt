@@ -1,4 +1,4 @@
-package com.set.app.entertainment.videomanager
+package com.setDDG.videomanager
 
 interface VideoInterFace {
     fun onVideoEnd()

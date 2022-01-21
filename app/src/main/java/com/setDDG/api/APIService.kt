@@ -5,10 +5,9 @@ import com.setDDG.homePage.BottomBarModel
 import com.setDDG.baseViewPager.NewsTabsModel
 import com.rockex6.practiceappfoundation.R
 import com.set.app.entertainment.api.APIManager
-import com.set.app.entertainment.videomanager.VideoModel
+import com.setDDG.videomanager.VideoModel
 import com.setDDG.util.AESUtil
 import io.reactivex.Single
-import io.reactivex.observers.DisposableSingleObserver
 import org.xmlpull.v1.XmlPullParser
 
 

@@ -1,4 +1,4 @@
-package com.set.app.entertainment.videomanager
+package com.setDDG.videomanager
 
 import android.app.Activity
 import android.app.Dialog
@@ -9,7 +9,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.setDDG.videomanager.VideoManager
 import java.util.*
 
 class VideoPlayCallback {
@@ -153,13 +152,6 @@ class VideoPlayCallback {
             }
         }
 
-//        fun stopVideoRecyclerViewScrolling(flag: Boolean) {
-//            (videoRecyclerView?.layoutManager as CustomGridLayoutManager).setScrollEnabled(!flag)
-//        }
-//
-//        fun stopVideoViewPagerScrolling(flag: Boolean){
-//            videoContentViewPager?.isUserInputEnabled = !flag
-//        }
     }
 
 }
