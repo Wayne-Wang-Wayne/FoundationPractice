@@ -41,7 +41,7 @@ class CarouselPagerFunctionFragment : Fragment() {
             setPicMarquee(formatMarqueeModels, formatMarqueeModels.size)
         }
     }
-
+    //view pager 可以參考這篇：https://stackoverflow.com/questions/28783690/android-viewpager-center-item-on-screen/28811330
     private fun setPicMarquee(formatMarqueeModels: ArrayList<PokemonPicModel>, tabSize: Int) {
         mCarouselPagerAdapter =
             CarouselPagerAdapter(this.childFragmentManager, formatMarqueeModels, viewPager,
