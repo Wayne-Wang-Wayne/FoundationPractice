@@ -93,6 +93,8 @@ public class CarouselPagerAdapter extends CircleAdapter implements View.OnTouchL
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouch(View v, MotionEvent event) {
+        //讓滑動時不受到parent view影響
+        v.getParent().requestDisallowInterceptTouchEvent(true);
         if (event.getAction() == MotionEvent.ACTION_MOVE && !isPause) { //按下螢幕中間的文字
             Logger.d(TAG, String.valueOf(event.getAction()));
             stop();

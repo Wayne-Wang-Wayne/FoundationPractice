@@ -58,8 +58,7 @@ class CarouselPagerFunctionFragment : Fragment() {
         mCarouselPagerAdapter.notifyDataSetChanged()
         viewPager.addOnPageChangeListener(mCarouselPagerAdapter)
         bottom_tabLayout.addOnTabSelectedListener(mCarouselPagerAdapter)
-        //讓滑動時不要動到parent
-        stopParentWhenScrolling()
+
     }
 
     /**
@@ -72,17 +71,4 @@ class CarouselPagerFunctionFragment : Fragment() {
         }
     }
 
-    private fun stopParentWhenScrolling() {
-        viewPager.setOnTouchListener(OnTouchListener { v, event ->
-            v.parent.requestDisallowInterceptTouchEvent(true)
-            false
-        })
-
-        viewPager.setOnPageChangeListener(object : SimpleOnPageChangeListener() {
-            override fun onPageScrolled(
-                position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-                viewPager.parent.requestDisallowInterceptTouchEvent(true)
-            }
-        })
-    }
 }
