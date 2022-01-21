@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.rockex6.practiceappfoundation.R
+import com.setDDG.carouselPagerFunction.CarouselPagerFunctionFragment
 import com.setDDG.glideFunction.GlideFunctionFragment
 import com.setDDG.weatherViewFunction.WeatherViewFunctionFragment
 import com.setDDG.webViewFunction.WebViewFunctionFragment
@@ -90,6 +91,8 @@ open class BaseViewPagerFragment : Fragment() {
                                 }
                             }))
                         }
+                        "carousel_pager" -> newsListFragments.add(
+                            CarouselPagerFunctionFragment.newInstance())
                     }
 
                 }

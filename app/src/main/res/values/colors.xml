@@ -10,6 +10,7 @@
     <!--新聞列表-->
     <color name="bottom_bar_title_select">#362d26</color>
     <color name="bottom_bar_title_unselect">#c8b9ad</color>
+    <color name="news_list_big_bg">#FFFFFF</color>
     <!--分類tab-->
     <color name="tab_indicator">#f2bc4d</color>
     <color name="tab_select_text">#ffffff</color>
@@ -65,4 +66,10 @@
     <color name="color3261b2">#3261b2</color>
     <color name="transparent">#00000000</color>
     <!--6.0-->
+
+
+    <!--輪播圓點指示器-->
+    <color name="tab_indicator_outside_ring">#6ea1ff</color>
+    <color name="tab_indicator_inside_ring">#FFFFFF</color>
+    <color name="tab_indicator_default">#b3b3b3</color>
 </resources>

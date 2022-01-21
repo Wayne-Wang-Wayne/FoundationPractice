@@ -12,4 +12,7 @@
     <item
         id="glide_picture"
         title="glide圖片" />
+    <item
+        id="carousel_pager"
+        title="carousel輪播" />
 </xml>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_15dp"
+    android:layout_marginTop="@dimen/_20dp"
+    android:layout_marginEnd="@dimen/_15dp"
+    android:layout_marginBottom="@dimen/_10dp"
+    android:background="@drawable/image_corner"
+    android:clipChildren="false"
+    android:elevation="@dimen/_10dp">
+
+
+    <com.setDDG.customView.imageView.ProportionImageView
+        android:id="@+id/image_news_view_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/loading_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</RelativeLayout>
