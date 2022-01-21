@@ -33,6 +33,7 @@ import com.set.app.entertainment.videomanager.VideoPlayCallback.Companion.isFull
 import com.set.app.entertainment.videomanager.VideoPlayCallback.Companion.onUpdatePlay
 import com.set.app.entertainment.videomanager.VideoPlayCallback.Companion.showFullScreenDialog
 import com.set.app.entertainment.videomanager.VideoPrepareInterFace
+import com.setDDG.baseViewPager.StopMainViewPagerScroll
 import com.setDDG.util.*
 import com.setDDG.util.UrlUtil.getYoutubeID
 
@@ -49,7 +50,10 @@ class YoutubeManager(
     var isSeekBar: Boolean,
     var isShowThumbnail: Boolean = true,
     val videoInterFace: VideoInterFace?,
-    private val videoPrepareInterFace: VideoPrepareInterFace?) : View.OnClickListener {
+    private val videoPrepareInterFace: VideoPrepareInterFace?,
+    //此App多加的
+    private var stopMainViewPagerScroll: StopMainViewPagerScroll? = null
+) : View.OnClickListener {
     private val TAG = "YoutubeManager"
     private var vYoutubePlay: ImageButton? = null
     private var vYoutubeReturn: ImageButton? = null
@@ -274,7 +278,7 @@ class YoutubeManager(
                     }
 
                     PlayerConstants.PlayerState.PAUSED -> {
-                        vYoutubePlay?.setImageResource(R.drawable.ic_media_play)
+                        vYoutubePlay?.setImageResource(R.drawable.ic_play_video)
                     }
 
                     PlayerConstants.PlayerState.ENDED -> {
@@ -390,7 +394,7 @@ class YoutubeManager(
             true
         } else {
             vYoutubePlayer?.pause()
-            vYoutubePlay?.setImageResource(R.drawable.ic_media_play)
+            vYoutubePlay?.setImageResource(R.drawable.ic_play_video)
             false
         }
     }
@@ -560,6 +564,8 @@ class YoutubeManager(
                         vVideoCover?.visibility = VISIBLE
                     }
                     //讓滑動影片時，畫面不會亂跑
+                    //此App才加的
+                    stopMainViewPagerScroll?.stopScroll(true)
 //                    if (VideoPlayCallback.videoRecyclerView != null) {
 //                        VideoPlayCallback.stopVideoRecyclerViewScrolling(true)
 //                    }
@@ -616,6 +622,8 @@ class YoutubeManager(
 
 
                     //讓滑動影片時，畫面不會亂跑
+                    //此App才加的
+                    stopMainViewPagerScroll?.stopScroll(false)
 //                    if (VideoPlayCallback.videoRecyclerView != null) {
 //                        VideoPlayCallback.stopVideoRecyclerViewScrolling(false)
 //                    }

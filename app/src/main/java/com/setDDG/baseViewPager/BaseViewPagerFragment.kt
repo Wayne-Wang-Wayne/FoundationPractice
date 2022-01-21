@@ -83,8 +83,13 @@ open class BaseViewPagerFragment : Fragment() {
                             WebViewFunctionFragment.newInstance())
                         "weather_view" -> newsListFragments.add(
                             WeatherViewFunctionFragment.newInstance())
-                        "youtube_player_view" -> newsListFragments.add(
-                            YTPlayerFunctionFragment.newInstance())
+                        "youtube_player_view" -> {
+                            newsListFragments.add(YTPlayerFunctionFragment.newInstance(object :StopMainViewPagerScroll{
+                                override fun stopScroll(flag: Boolean) {
+                                    vViewPager.isUserInputEnabled = !flag
+                                }
+                            }))
+                        }
                     }
 
                 }
@@ -126,5 +131,8 @@ open class BaseViewPagerFragment : Fragment() {
         }
     }
 
+}
 
+interface StopMainViewPagerScroll {
+    fun stopScroll(flag: Boolean)
 }

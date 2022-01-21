@@ -1,11 +1,13 @@
-package com.set.app.entertainment.videomanager
+package com.setDDG.videomanager
 
 import android.app.Activity
 import android.app.Dialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.bumptech.glide.Glide
-import com.setDDG.videomanager.ExoPlayerManager
-import com.setDDG.videomanager.YoutubeManager
+import com.set.app.entertainment.videomanager.VideoInterFace
+import com.set.app.entertainment.videomanager.VideoPlayCallback
+import com.set.app.entertainment.videomanager.VideoPrepareInterFace
+import com.setDDG.baseViewPager.StopMainViewPagerScroll
 import java.util.*
 
 class VideoManager(var mActivity : Activity,
@@ -19,7 +21,8 @@ class VideoManager(var mActivity : Activity,
                    var isSeekbar : Boolean,
                    var isShowThumbnail: Boolean,
                    private val videoInterFace : VideoInterFace?,
-                   private val videoPrepareInterFace : VideoPrepareInterFace?
+                   private val videoPrepareInterFace : VideoPrepareInterFace?,
+                   private var stopMainViewPagerScroll:StopMainViewPagerScroll? = null
 ) {
 
 
@@ -86,6 +89,27 @@ class VideoManager(var mActivity : Activity,
         false,
         null,
         null)
+
+    constructor(activity : Activity,
+                videoURL : String,
+                videoLayout : ConstraintLayout,
+                viewWidth : Int,
+                position : Int,
+                thumbImg : String,
+                isSeekbar : Boolean,
+                stopMainViewPagerScroll: StopMainViewPagerScroll) : this(activity,
+        videoURL,
+        "",
+        0,
+        videoLayout,
+        position,
+        viewWidth,
+        thumbImg,
+        isSeekbar,
+        false,
+        null,
+        null,
+        stopMainViewPagerScroll)
 
     //111
     constructor(activity : Activity,
@@ -198,8 +222,7 @@ class VideoManager(var mActivity : Activity,
             //customLayoutId如果要用預設的就設定為0
             youtubeManager = YoutubeManager(mActivity,
                 videoURL,
-                customLayoutId,
-                VideoPlayCallback.isMute,
+                customLayoutId, VideoPlayCallback.isMute,
                 videoLayout,
                 mFullScreenDialog,
                 position,
@@ -208,12 +231,13 @@ class VideoManager(var mActivity : Activity,
                 isSeekbar,
                 isShowThumbnail,
                 videoInterFace,
-                videoPrepareInterFace)
+                videoPrepareInterFace,
+                //此APP多加的
+                stopMainViewPagerScroll)
         } else {
             exoPlayerManager = ExoPlayerManager(mActivity,
                 videoURL,
-                adCode,
-                VideoPlayCallback.isMute,
+                adCode, VideoPlayCallback.isMute,
                 videoLayout,
                 mFullScreenDialog,
                 position,

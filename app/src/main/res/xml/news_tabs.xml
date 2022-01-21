@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xml>
     <item
-        id="glide_picture"
-        title="glide圖片" />
-    <item
         id="open_web_view"
         title="開webView" />
     <item
@@ -11,5 +8,8 @@
         title="下雪特效" />
     <item
         id="youtube_player_view"
-        title="ＹT播放器" />
+        title="YT播放器" />
+    <item
+        id="glide_picture"
+        title="glide圖片" />
 </xml>
