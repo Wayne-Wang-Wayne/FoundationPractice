@@ -8,23 +8,23 @@
     android:layout_marginTop="@dimen/_20dp"
     android:layout_marginEnd="@dimen/_15dp"
     android:layout_marginBottom="@dimen/_10dp"
-    android:background="@drawable/image_corner"
+    android:background="@color/transparent"
     android:clipChildren="false"
     android:elevation="@dimen/_10dp"
-    >
+    ><!-- 原本是設android:background="@drawable/image_corner"，依需求可改回去 -->
 
 
     <com.setDDG.customView.imageView.ProportionImageView
         android:id="@+id/image_news_view_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
+        android:scaleType="center"
         android:src="@drawable/loading_photo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        /><!-- scaleType可依需求調整 -->
 
 
 </RelativeLayout>
