@@ -14,6 +14,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.rockex6.practiceappfoundation.R
 import com.setDDG.carouselPagerFunction.CarouselPagerFunctionFragment
 import com.setDDG.glideFunction.GlideFunctionFragment
+import com.setDDG.gridLayoutRecyclerViewFunction.GridLayoutFunctionFragment
 import com.setDDG.recyclerViewFunction.RecyclerViewFunctionFragment
 import com.setDDG.weatherViewFunction.WeatherViewFunctionFragment
 import com.setDDG.webViewFunction.WebViewFunctionFragment
@@ -92,6 +93,8 @@ open class BaseViewPagerFragment : Fragment() {
                             CarouselPagerFunctionFragment.newInstance())
                         "recyclerview" -> newsListFragments.add(
                             RecyclerViewFunctionFragment.newInstance())
+                        "gridLayout" -> newsListFragments.add(
+                            GridLayoutFunctionFragment.newInstance())
                     }
 
                 }
