@@ -5,6 +5,8 @@ import com.setDDG.homePage.BottomBarModel
 import com.setDDG.baseViewPager.NewsTabsModel
 import com.rockex6.practiceappfoundation.R
 import com.set.app.entertainment.api.APIManager
+import com.setDDG.recyclerViewFunction.model.pokeModel.PokeModel
+import com.setDDG.recyclerViewFunction.pokemonApiInterface.PokeBaseInfo
 import com.setDDG.videomanager.VideoModel
 import com.setDDG.util.AESUtil
 import io.reactivex.Single
@@ -12,6 +14,10 @@ import org.xmlpull.v1.XmlPullParser
 
 
 object APIService {
+    //寶可夢
+    private const val POKE_BASE_URL = "https://pokeapi.co/api/v2/"
+
+
     var isNeedEncrypt = true
 
 
@@ -78,6 +84,10 @@ object APIService {
             it.onSuccess(videoModel)
         }
 
+    }
+
+    fun getPokeBaseData():Single<PokeModel>{
+        return getApi(POKE_BASE_URL, PokeBaseInfo::class.java).getPokeBaseInfo()
     }
 
     private fun <T> getApi(domain: String, cls: Class<T>): T {
