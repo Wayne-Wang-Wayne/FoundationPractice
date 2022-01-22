@@ -1,4 +1,4 @@
 package com.setDDG.recyclerViewFunction.model
 
 data class BaseFormatPokeModel(
-    val type: Int = 0, val content: Any?)
+    var type: Int = 0, var content: Any?)

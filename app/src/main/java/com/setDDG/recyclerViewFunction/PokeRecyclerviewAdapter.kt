@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rockex6.practiceappfoundation.R
 import com.setDDG.customView.CustomTabLayout
 import com.setDDG.recyclerViewFunction.model.BaseFormatPokeModel
+import com.setDDG.util.loadImage
 import kotlinx.android.synthetic.main.item_pokemon_image.view.*
 import kotlinx.android.synthetic.main.item_pokemon_type.view.*
 
@@ -33,7 +34,7 @@ class PokeRecyclerviewAdapter(private val context: Context) :
                 view = inflater.inflate(R.layout.item_pokemon_image, parent, false)
                 viewHolder = PokeImageViewHolder(view)
             }
-            PokeModelEnum.POKEMON_TYPE -> {
+            PokeModelEnum.POKEMON_TYPES -> {
                 view = inflater.inflate(R.layout.item_pokemon_type, parent, false)
                 viewHolder = PokeTypeViewHolder(view)
             }
@@ -47,12 +48,18 @@ class PokeRecyclerviewAdapter(private val context: Context) :
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = getItem(position) ?: return
-        when(getItemViewType(position)){
-            PokeModelEnum.POKEMON_PICTURE->{
-
+        when (getItemViewType(position)) {
+            PokeModelEnum.POKEMON_PICTURE -> {
+                holder as PokeImageViewHolder
+                holder.pokeImageView.loadImage(context, item as String)
             }
-            PokeModelEnum.POKEMON_TYPE->{
-
+            PokeModelEnum.POKEMON_TYPES -> {
+                holder as PokeTypeViewHolder
+                holder.pokeTabView.let {
+                    for (tabInfo in item as ArrayList<String>){
+                        it.addTab(it.newTab().setText(tabInfo))
+                    }
+                }
             }
         }
     }
