@@ -15,4 +15,7 @@
     <item
         id="carousel_pager"
         title="carousel輪播" />
+    <item
+        id="recyclerview"
+        title="recyclerView" />
 </xml>
