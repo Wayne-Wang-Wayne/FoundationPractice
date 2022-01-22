@@ -8,5 +8,5 @@ import retrofit2.http.Path
 
 interface PokeDetailInfo{
     @GET("/api/v2/pokemon/{id}/")
-    fun getPokeDetailInfo(@Path("id") id: Int): PokeDetailModel
+    fun getPokeDetailInfo(@Path("id") id: Int): Single<PokeDetailModel>
 }

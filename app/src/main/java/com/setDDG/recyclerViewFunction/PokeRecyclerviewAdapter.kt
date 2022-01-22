@@ -60,9 +60,12 @@ class PokeRecyclerviewAdapter(private val context: Context) :
                         it.addTab(it.newTab().setText(tabInfo))
                     }
                 }
+
+                holder.pokeTabView.setHasTransientState(true)
             }
         }
     }
+
 
     override fun getItemCount(): Int {
         return data.size

@@ -10,13 +10,24 @@ import io.reactivex.observers.DisposableSingleObserver
 
 class RecyclerViewFunctionViewModel : BaseViewModel() {
     val pokeFormatList = MutableLiveData<ArrayList<BaseFormatPokeModel>>()
+    var count = 1
+    var pokeDetailList: ArrayList<PokeDetailModel> = ArrayList<PokeDetailModel>()
 
     fun fetchPokeData() {
         isLoading.value = true
-        addDisposable(APIService.getPokeDetailData(),
-            object : DisposableSingleObserver<ArrayList<PokeDetailModel>>() {
-                override fun onSuccess(t: ArrayList<PokeDetailModel>) {
-                    formatData(t)
+        addDisposable(APIService.getPokeDetailData(count),
+            object : DisposableSingleObserver<PokeDetailModel>() {
+                override fun onSuccess(t: PokeDetailModel) {
+
+                    if (count <= 30) {
+                        pokeDetailList.add(t)
+                        count++
+                        fetchPokeData()
+                    } else {
+                        formatData(pokeDetailList)
+                        count = 1
+                    }
+
                 }
 
                 override fun onError(e: Throwable) {

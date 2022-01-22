@@ -90,15 +90,8 @@ object APIService {
 
     }
 
-    fun getPokeDetailData(): Single<ArrayList<PokeDetailModel>> {
-        return Single.create {
-            val pokeDetailList = ArrayList<PokeDetailModel>()
-            for (count in 1..151) {
-                pokeDetailList.add(
-                    getApi(POKE_BASE_URL, PokeDetailInfo::class.java).getPokeDetailInfo(count))
-            }
-            it.onSuccess(pokeDetailList)
-        }
+    fun getPokeDetailData(count:Int): Single<PokeDetailModel> {
+        return getApi(POKE_BASE_URL, PokeDetailInfo::class.java).getPokeDetailInfo(count)
     }
 
     fun formatPokeData(pokeDetailList: ArrayList<PokeDetailModel>): Single<ArrayList<BaseFormatPokeModel>> {
