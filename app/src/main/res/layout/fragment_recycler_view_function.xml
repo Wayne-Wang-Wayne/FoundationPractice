@@ -7,12 +7,17 @@
 
     <com.setDDG.customView.CustomRecyclerView
         android:id="@+id/pokeRecyclerview"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
         android:background="@color/colorf6f6f6"
         android:clipChildren="false"
         android:overScrollMode="never"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <include
         layout="@layout/retry_layout"
@@ -23,6 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ProgressBar
         android:id="@+id/vProgress"
         android:layout_width="wrap_content"
