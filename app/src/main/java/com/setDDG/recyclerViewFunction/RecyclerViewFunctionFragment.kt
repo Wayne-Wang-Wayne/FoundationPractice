@@ -40,7 +40,7 @@ class RecyclerViewFunctionFragment : Fragment() {
             ViewModelProvider(this).get(RecyclerViewFunctionViewModel::class.java)
         pokeRecyclerviewAdapter = context?.let { PokeRecyclerviewAdapter(it) }!!
         pokeRecyclerview.apply {
-            layoutManager = CustomGridLayoutManager(context)
+            layoutManager = CustomLinearLayoutManager(context)
             adapter = pokeRecyclerviewAdapter
         }
     }
@@ -71,7 +71,7 @@ class RecyclerViewFunctionFragment : Fragment() {
     }
 }
 
-class CustomGridLayoutManager(context: Context?) : LinearLayoutManager(context) {
+class CustomLinearLayoutManager(context: Context?) : LinearLayoutManager(context) {
     private var isScrollEnabled = true
 
     fun setScrollEnabled(flag: Boolean) {

@@ -19,7 +19,7 @@ class RecyclerViewFunctionViewModel : BaseViewModel() {
             object : DisposableSingleObserver<PokeDetailModel>() {
                 override fun onSuccess(t: PokeDetailModel) {
 
-                    if (count <= 30) {
+                    if (count <= 9) {
                         pokeDetailList.add(t)
                         count++
                         fetchPokeData()
