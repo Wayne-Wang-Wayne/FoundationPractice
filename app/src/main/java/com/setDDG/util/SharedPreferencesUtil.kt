@@ -9,7 +9,7 @@ import java.util.*
 
 
 /**
- * 目前用以下方法ArrayList<>,Map<>無法直接存，要再另外寫方法
+ * 目前用以下方法ArrayList<>無法直接存，要再另外看要怎麼調整
  */
 class SharedPreferencesUtil(
     context: Context,
