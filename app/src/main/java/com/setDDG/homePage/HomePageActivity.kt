@@ -29,6 +29,7 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
+        initTimber()
         setSupportActionBar(vToolbarWithTitle)
         initToolBar()
         homePageViewModel = ViewModelProvider(this).get(HomePageViewModel::class.java)
@@ -38,7 +39,7 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
         //不需要，是為了不讓bottomBar起作用才加的
         changePage(BaseViewPagerFragment())
 
-        initTimber()
+        
     }
 
     private fun observeViewModel() {
