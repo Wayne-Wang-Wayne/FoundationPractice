@@ -7,12 +7,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import com.rockex6.practiceappfoundation.BuildConfig
 import com.setDDG.baseViewPager.BaseViewPagerFragment
 import com.setDDG.util.StatusBarUtil
 import com.rockex6.practiceappfoundation.R
 import com.setDDG.util.IntentUtil
 import kotlinx.android.synthetic.main.activity_home_page.*
 import kotlinx.android.synthetic.main.toolbar_layout_with_title.*
+import timber.log.Timber
 
 class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
 
@@ -35,6 +37,8 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
 
         //不需要，是為了不讓bottomBar起作用才加的
         changePage(BaseViewPagerFragment())
+
+        initTimber()
     }
 
     private fun observeViewModel() {
@@ -88,5 +92,11 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
         supportFragmentManager.beginTransaction()
             .replace(home_page_content.id, fragment)
             .commitAllowingStateLoss()
+    }
+
+    private fun initTimber() {
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
     }
 }
