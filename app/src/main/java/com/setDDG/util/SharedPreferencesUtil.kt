@@ -3,13 +3,13 @@ package com.setDDG.util
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
-import com.google.gson.reflect.TypeToken
 import com.set.app.settools.api.DataParser
-import java.util.*
 
 
 /**
- * 目前用以下方法ArrayList<>無法直接存，要再另外看要怎麼調整
+ * 用getSimpleValue可以正確取出儲存型態為基本型態或普通自定義class的值，
+ * 但ArrayList<自定義class>無法直接存，
+ * 但可以用下面註解掉的getComplicatedValue方法即可work
  */
 class SharedPreferencesUtil(
     context: Context,
@@ -52,7 +52,7 @@ class SharedPreferencesUtil(
 //    operator fun setValue(thisRef: Any?, property: KProperty<*>, value: T) {
 //        putSharePreferences(key, value)
 //    }
-    fun <T> getValue(
+    fun <T> getSimpleValue(
         key: String, defaultValue: T, cls: Class<*>?): T? {
         return getSharePreferences(key, defaultValue, cls)
     }
@@ -87,7 +87,7 @@ class SharedPreferencesUtil(
                     is Long -> getLong(key, defaultValue)
                     is Float -> getFloat(key, defaultValue)
                     else -> {
-                       DataParser.getGson()
+                        DataParser.getGson()
                             .fromJson(getString(key, defaultValue.toString()), cls)
                     }
 
@@ -99,6 +99,16 @@ class SharedPreferencesUtil(
             return null
         }
 
+    /**
+     * 如想正確取出ArrayList<>等較complicated的值，可以下面方法依樣畫葫蘆客製
+     */
+//    fun getComplicatedValue(key: String): ArrayList<TestModel> = with(prefs) {
+//        val arrayList: ArrayList<TestModel>
+//        val type = object : TypeToken<ArrayList<TestModel>>() {}.type
+//        arrayList = DataParser.getGson()
+//            .fromJson(getString(key, ""), type)
+//        return arrayList
+//    }
 
 }
 
