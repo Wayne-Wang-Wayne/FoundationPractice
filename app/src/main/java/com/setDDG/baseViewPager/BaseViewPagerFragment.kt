@@ -13,6 +13,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.rockex6.practiceappfoundation.R
 import com.setDDG.carouselPagerFunction.CarouselPagerFunctionFragment
+import com.setDDG.dialogFunction.DialogFunctionFragment
 import com.setDDG.glideFunction.GlideFunctionFragment
 import com.setDDG.gridLayoutRecyclerViewFunction.GridLayoutFunctionFragment
 import com.setDDG.recyclerViewFunction.RecyclerViewFunctionFragment
@@ -95,6 +96,8 @@ open class BaseViewPagerFragment : Fragment() {
                             RecyclerViewFunctionFragment.newInstance())
                         "gridLayout" -> newsListFragments.add(
                             GridLayoutFunctionFragment.newInstance())
+                        "dialog" -> newsListFragments.add(
+                            DialogFunctionFragment.newInstance())
                     }
 
                 }

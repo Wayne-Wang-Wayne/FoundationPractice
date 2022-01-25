@@ -21,4 +21,7 @@
     <item
         id="gridLayout"
         title="gridLayout" />
+    <item
+        id="dialog"
+        title="dialog" />
 </xml>

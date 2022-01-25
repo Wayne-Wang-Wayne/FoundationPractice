@@ -9,4 +9,9 @@
     <style name="font_medium">
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
+
+    <style name="DialogAnimationTheme">
+        <item name="android:windowEnterAnimation">@anim/camera_select_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/camera_select_slide_out</item>
+    </style>
 </resources>
