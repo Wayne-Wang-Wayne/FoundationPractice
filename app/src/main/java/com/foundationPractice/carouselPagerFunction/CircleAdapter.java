@@ -1,4 +1,4 @@
-package com.setDDG.carouselPagerFunction;
+package com.foundationPractice.carouselPagerFunction;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

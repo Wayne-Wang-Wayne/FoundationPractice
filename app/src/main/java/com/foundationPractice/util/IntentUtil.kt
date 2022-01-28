@@ -1,4 +1,4 @@
-package com.setDDG.util
+package com.foundationPractice.util
 
 import android.app.Activity
 import android.content.ActivityNotFoundException
@@ -11,7 +11,7 @@ import android.os.Bundle
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.multidex.BuildConfig
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.webview.WebViewActivity
+import com.foundationPractice.webview.WebViewActivity
 import java.util.*
 
 object IntentUtil {

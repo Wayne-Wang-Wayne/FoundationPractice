@@ -1,4 +1,4 @@
-package com.setDDG.recyclerViewFunction.model.pokeModel
+package com.foundationPractice.recyclerViewFunction.model.pokeModel
 
 data class PokeModel(
     val count: Int,

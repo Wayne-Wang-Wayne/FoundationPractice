@@ -1,10 +1,10 @@
-package com.setDDG.homePage
+package com.foundationPractice.homePage
 
 import android.app.Application
 import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
-import com.setDDG.api.APIService
-import com.setDDG.basicClass.BaseAndroidViewModel
+import com.foundationPractice.api.APIService
+import com.foundationPractice.basicClass.BaseAndroidViewModel
 import io.reactivex.observers.DisposableSingleObserver
 
 

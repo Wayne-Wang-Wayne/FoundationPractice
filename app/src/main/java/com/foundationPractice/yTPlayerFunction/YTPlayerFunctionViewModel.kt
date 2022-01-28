@@ -1,11 +1,11 @@
-package com.setDDG.yTPlayerFunction
+package com.foundationPractice.yTPlayerFunction
 
 import android.app.Application
 import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
-import com.setDDG.videomanager.VideoModel
-import com.setDDG.api.APIService
-import com.setDDG.basicClass.BaseAndroidViewModel
+import com.foundationPractice.videomanager.VideoModel
+import com.foundationPractice.api.APIService
+import com.foundationPractice.basicClass.BaseAndroidViewModel
 import io.reactivex.observers.DisposableSingleObserver
 
 class YTPlayerFunctionViewModel(@NonNull application: Application) : BaseAndroidViewModel(application) {

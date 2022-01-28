@@ -1,9 +1,9 @@
-package com.setDDG.customView
+package com.foundationPractice.customView
 
 import android.content.Context
 import android.util.AttributeSet
 import com.google.android.material.tabs.TabLayout
-import com.setDDG.util.PhoneSizeUtil
+import com.foundationPractice.util.PhoneSizeUtil
 import java.lang.reflect.Field
 
 class CustomTabLayout(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :

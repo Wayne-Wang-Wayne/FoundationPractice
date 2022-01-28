@@ -1,4 +1,4 @@
-package com.setDDG.api
+package com.foundationPractice.api
 
 import okhttp3.Interceptor
 import okhttp3.Request

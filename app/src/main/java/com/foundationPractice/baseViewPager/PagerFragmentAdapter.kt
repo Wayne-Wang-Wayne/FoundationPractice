@@ -1,4 +1,4 @@
-package com.setDDG.baseViewPager
+package com.foundationPractice.baseViewPager
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

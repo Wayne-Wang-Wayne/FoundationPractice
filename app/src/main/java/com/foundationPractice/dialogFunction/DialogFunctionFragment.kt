@@ -1,4 +1,4 @@
-package com.setDDG.dialogFunction
+package com.foundationPractice.dialogFunction
 
 import android.content.Context
 import android.os.Bundle
@@ -7,10 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.gridLayoutRecyclerViewFunction.GridLayoutFunctionFragment
-import com.setDDG.util.OnSwipeTouchListener
+import com.foundationPractice.util.OnSwipeTouchListener
 import kotlinx.android.synthetic.main.fragment_dialog_function.*
-import kotlinx.android.synthetic.main.test_dialog_one.*
 
 
 class DialogFunctionFragment : Fragment() {

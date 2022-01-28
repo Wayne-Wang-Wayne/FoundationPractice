@@ -1,4 +1,4 @@
-package com.setDDG.util
+package com.foundationPractice.util
 
 import android.annotation.SuppressLint
 import android.content.Context

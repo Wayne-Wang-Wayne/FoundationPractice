@@ -1,10 +1,10 @@
-package com.setDDG.recyclerViewFunction
+package com.foundationPractice.recyclerViewFunction
 
 import androidx.lifecycle.MutableLiveData
-import com.setDDG.api.APIService
-import com.setDDG.basicClass.BaseViewModel
-import com.setDDG.recyclerViewFunction.model.BaseFormatPokeModel
-import com.setDDG.recyclerViewFunction.model.pokeDetailModel.PokeDetailModel
+import com.foundationPractice.api.APIService
+import com.foundationPractice.basicClass.BaseViewModel
+import com.foundationPractice.recyclerViewFunction.model.BaseFormatPokeModel
+import com.foundationPractice.recyclerViewFunction.model.pokeDetailModel.PokeDetailModel
 import io.reactivex.observers.DisposableSingleObserver
 
 

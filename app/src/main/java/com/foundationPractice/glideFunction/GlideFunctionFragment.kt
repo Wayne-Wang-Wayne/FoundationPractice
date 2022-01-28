@@ -1,4 +1,4 @@
-package com.setDDG.glideFunction
+package com.foundationPractice.glideFunction
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.util.loadImage
+import com.foundationPractice.util.loadImage
 import kotlinx.android.synthetic.main.fragment_glide_function.*
 
 

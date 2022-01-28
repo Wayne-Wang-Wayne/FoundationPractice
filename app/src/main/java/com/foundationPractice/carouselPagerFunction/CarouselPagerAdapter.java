@@ -1,4 +1,4 @@
-package com.setDDG.carouselPagerFunction;
+package com.foundationPractice.carouselPagerFunction;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,8 +13,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
-import com.setDDG.customView.CarouseViewPager;
-import com.setDDG.util.Logger;
+import com.foundationPractice.customView.CarouseViewPager;
+import com.foundationPractice.util.Logger;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -1,4 +1,4 @@
-package com.setDDG.videomanager
+package com.foundationPractice.videomanager
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -23,13 +23,13 @@ import com.google.android.exoplayer2.ui.DefaultTimeBar
 import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
-import com.setDDG.videomanager.VideoPlayCallback.Companion.isFullScreen
-import com.setDDG.videomanager.VideoPlayCallback.Companion.onUpdatePlay
-import com.setDDG.videomanager.VideoPlayCallback.Companion.showFullScreenDialog
+import com.foundationPractice.videomanager.VideoPlayCallback.Companion.isFullScreen
+import com.foundationPractice.videomanager.VideoPlayCallback.Companion.onUpdatePlay
+import com.foundationPractice.videomanager.VideoPlayCallback.Companion.showFullScreenDialog
 import kotlinx.android.synthetic.main.exo_player_control_view.view.*
 import kotlinx.android.synthetic.main.item_exoplayer_controller.view.*
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.util.*
+import com.foundationPractice.util.*
 
 class ExoPlayerManager(
     var mActivity: Activity,

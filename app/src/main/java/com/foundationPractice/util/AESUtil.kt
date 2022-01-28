@@ -1,4 +1,4 @@
-package com.setDDG.util
+package com.foundationPractice.util
 
 import android.util.Base64
 import java.security.spec.AlgorithmParameterSpec

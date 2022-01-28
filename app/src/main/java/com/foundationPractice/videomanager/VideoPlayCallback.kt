@@ -1,4 +1,4 @@
-package com.setDDG.videomanager
+package com.foundationPractice.videomanager
 
 import android.app.Activity
 import android.app.Dialog

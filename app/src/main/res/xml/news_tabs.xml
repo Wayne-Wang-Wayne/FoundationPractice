@@ -24,4 +24,7 @@
     <item
         id="dialog"
         title="dialog" />
+    <item
+        id="camera"
+        title="camera" />
 </xml>

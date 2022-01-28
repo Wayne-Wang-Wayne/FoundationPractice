@@ -1,6 +1,6 @@
-package com.setDDG.glideFunction
+package com.foundationPractice.glideFunction
 
-import com.setDDG.basicClass.BaseViewModel
+import com.foundationPractice.basicClass.BaseViewModel
 
 class GlideFunctionViewModel:BaseViewModel() {
 

@@ -2,7 +2,7 @@ package com.set.app.entertainment.api
 
 import com.facebook.stetho.okhttp3.BuildConfig
 import com.facebook.stetho.okhttp3.StethoInterceptor
-import com.setDDG.api.HttpLogger
+import com.foundationPractice.api.HttpLogger
 import com.set.app.settools.api.DataParser
 
 import okhttp3.OkHttpClient

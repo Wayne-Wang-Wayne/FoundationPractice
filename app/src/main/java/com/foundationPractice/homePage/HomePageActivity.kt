@@ -1,20 +1,24 @@
-package com.setDDG.homePage
+package com.foundationPractice.homePage
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.ViewGroup
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import com.foundationPractice.baseViewPager.BaseViewPagerFragment
+import com.foundationPractice.util.StatusBarUtil
+import com.google.firebase.FirebaseApp
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.rockex6.practiceappfoundation.BuildConfig
-import com.setDDG.baseViewPager.BaseViewPagerFragment
-import com.setDDG.util.StatusBarUtil
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.util.IntentUtil
 import kotlinx.android.synthetic.main.activity_home_page.*
 import kotlinx.android.synthetic.main.toolbar_layout_with_title.*
 import timber.log.Timber
+
 
 class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
 
@@ -29,9 +33,7 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
-        initTimber()
-        setSupportActionBar(vToolbarWithTitle)
-        initToolBar()
+        init()
         homePageViewModel = ViewModelProvider(this).get(HomePageViewModel::class.java)
         observeViewModel()
         homePageViewModel.fetchBottomBar()
@@ -39,7 +41,7 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
         //不需要，是為了不讓bottomBar起作用才加的
         changePage(BaseViewPagerFragment())
 
-        
+
     }
 
     private fun observeViewModel() {
@@ -99,5 +101,23 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
+    }
+
+    private fun init() {
+        FirebaseApp.initializeApp(this)
+        FirebaseCrashlytics.getInstance()
+            .setCrashlyticsCollectionEnabled(true)
+        initTimber()
+        setSupportActionBar(vToolbarWithTitle)
+        initToolBar()
+
+        val crashButton = Button(this)
+        crashButton.text = "Test Crash"
+        crashButton.setOnClickListener {
+            throw RuntimeException("Test Crash") // Force a crash
+        }
+
+        addContentView(crashButton, ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT))
     }
 }

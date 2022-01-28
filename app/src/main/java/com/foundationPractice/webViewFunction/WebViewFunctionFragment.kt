@@ -1,4 +1,4 @@
-package com.setDDG.webViewFunction
+package com.foundationPractice.webViewFunction
 
 import android.content.Context
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.util.IntentUtil
+import com.foundationPractice.util.IntentUtil
 import kotlinx.android.synthetic.main.fragment_web_view_function.*
 
 

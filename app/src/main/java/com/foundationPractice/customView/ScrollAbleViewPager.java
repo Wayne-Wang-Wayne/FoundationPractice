@@ -1,4 +1,4 @@
-package com.setDDG.customView;
+package com.foundationPractice.customView;
 
 import android.content.Context;
 import android.util.AttributeSet;

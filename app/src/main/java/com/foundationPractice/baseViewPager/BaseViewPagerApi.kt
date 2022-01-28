@@ -1,4 +1,4 @@
-package com.setDDG.baseViewPager
+package com.foundationPractice.baseViewPager
 
 interface NewsListApi{
 

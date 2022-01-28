@@ -1,4 +1,4 @@
-package com.setDDG.weatherViewFunction
+package com.foundationPractice.weatherViewFunction
 
 import android.os.Bundle
 import android.view.LayoutInflater

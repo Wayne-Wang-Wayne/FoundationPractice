@@ -1,4 +1,4 @@
-package com.setDDG.baseViewPager
+package com.foundationPractice.baseViewPager
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,16 +10,17 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
+import com.foundationPractice.cameraFunction.CameraFunctionFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.carouselPagerFunction.CarouselPagerFunctionFragment
-import com.setDDG.dialogFunction.DialogFunctionFragment
-import com.setDDG.glideFunction.GlideFunctionFragment
-import com.setDDG.gridLayoutRecyclerViewFunction.GridLayoutFunctionFragment
-import com.setDDG.recyclerViewFunction.RecyclerViewFunctionFragment
-import com.setDDG.weatherViewFunction.WeatherViewFunctionFragment
-import com.setDDG.webViewFunction.WebViewFunctionFragment
-import com.setDDG.yTPlayerFunction.YTPlayerFunctionFragment
+import com.foundationPractice.carouselPagerFunction.CarouselPagerFunctionFragment
+import com.foundationPractice.dialogFunction.DialogFunctionFragment
+import com.foundationPractice.glideFunction.GlideFunctionFragment
+import com.foundationPractice.gridLayoutRecyclerViewFunction.GridLayoutFunctionFragment
+import com.foundationPractice.recyclerViewFunction.RecyclerViewFunctionFragment
+import com.foundationPractice.weatherViewFunction.WeatherViewFunctionFragment
+import com.foundationPractice.webViewFunction.WebViewFunctionFragment
+import com.foundationPractice.yTPlayerFunction.YTPlayerFunctionFragment
 import kotlinx.android.synthetic.main.fragment_base_view_pager.*
 import kotlinx.android.synthetic.main.retry_layout.view.*
 
@@ -98,6 +99,8 @@ open class BaseViewPagerFragment : Fragment() {
                             GridLayoutFunctionFragment.newInstance())
                         "dialog" -> newsListFragments.add(
                             DialogFunctionFragment.newInstance())
+                        "camera" -> newsListFragments.add(
+                            CameraFunctionFragment.newInstance())
                     }
 
                 }

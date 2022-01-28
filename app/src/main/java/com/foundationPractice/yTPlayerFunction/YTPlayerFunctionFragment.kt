@@ -1,4 +1,4 @@
-package com.setDDG.yTPlayerFunction
+package com.foundationPractice.yTPlayerFunction
 
 import android.app.Activity
 import android.content.Context
@@ -10,9 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.util.screenViewDP
-import com.setDDG.videomanager.VideoManager
-import com.setDDG.videomanager.VideoPlayCallback.Companion.videoManager
+import com.foundationPractice.util.screenViewDP
+import com.foundationPractice.videomanager.VideoManager
+import com.foundationPractice.videomanager.VideoPlayCallback.Companion.videoManager
 import kotlinx.android.synthetic.main.fragment_y_t_player_function.*
 import kotlin.properties.Delegates
 

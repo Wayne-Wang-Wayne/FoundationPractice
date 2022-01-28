@@ -1,4 +1,4 @@
-package com.setDDG.videomanager
+package com.foundationPractice.videomanager
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -26,13 +26,12 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.ui.utils.TimeUtiliti
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.ui.views.YouTubePlayerSeekBar
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.ui.views.YouTubePlayerSeekBarListener
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.videomanager.VideoPlayCallback.Companion.closeFullScreenDialog
-import com.setDDG.videomanager.VideoPlayCallback.Companion.isFullScreen
-import com.setDDG.videomanager.VideoPlayCallback.Companion.onUpdatePlay
-import com.setDDG.videomanager.VideoPlayCallback.Companion.showFullScreenDialog
-import com.setDDG.baseViewPager.StopMainViewPagerScroll
-import com.setDDG.util.*
-import com.setDDG.util.UrlUtil.getYoutubeID
+import com.foundationPractice.videomanager.VideoPlayCallback.Companion.closeFullScreenDialog
+import com.foundationPractice.videomanager.VideoPlayCallback.Companion.isFullScreen
+import com.foundationPractice.videomanager.VideoPlayCallback.Companion.onUpdatePlay
+import com.foundationPractice.videomanager.VideoPlayCallback.Companion.showFullScreenDialog
+import com.foundationPractice.util.*
+import com.foundationPractice.util.UrlUtil.getYoutubeID
 
 class YoutubeManager(
     var mActivity: Activity,

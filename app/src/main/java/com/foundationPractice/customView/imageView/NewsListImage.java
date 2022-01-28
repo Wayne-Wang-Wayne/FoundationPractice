@@ -1,9 +1,9 @@
-package com.setDDG.customView.imageView;
+package com.foundationPractice.customView.imageView;
 
 import android.content.Context;
 import android.util.AttributeSet;
 
-import com.setDDG.util.PhoneSizeUtil;
+import com.foundationPractice.util.PhoneSizeUtil;
 
 
 public class NewsListImage extends NewsItemImageView {

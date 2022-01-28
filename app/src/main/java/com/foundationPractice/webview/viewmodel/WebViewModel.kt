@@ -1,8 +1,8 @@
-package com.setDDG.webview.viewmodel
+package com.foundationPractice.webview.viewmodel
 
 import android.os.Bundle
 import androidx.lifecycle.MutableLiveData
-import com.setDDG.basicClass.BaseViewModel
+import com.foundationPractice.basicClass.BaseViewModel
 
 class WebViewModel() : BaseViewModel() {
 

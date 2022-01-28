@@ -1,16 +1,16 @@
-package com.setDDG.api
+package com.foundationPractice.api
 
 import android.content.Context
 import com.rockex6.practiceappfoundation.R
 import com.set.app.entertainment.api.APIManager
-import com.setDDG.baseViewPager.NewsTabsModel
-import com.setDDG.homePage.BottomBarModel
-import com.setDDG.recyclerViewFunction.PokeModelEnum
-import com.setDDG.recyclerViewFunction.model.BaseFormatPokeModel
-import com.setDDG.recyclerViewFunction.model.pokeDetailModel.PokeDetailModel
-import com.setDDG.recyclerViewFunction.pokemonApiInterface.PokeDetailInfo
-import com.setDDG.util.AESUtil
-import com.setDDG.videomanager.VideoModel
+import com.foundationPractice.baseViewPager.NewsTabsModel
+import com.foundationPractice.homePage.BottomBarModel
+import com.foundationPractice.recyclerViewFunction.PokeModelEnum
+import com.foundationPractice.recyclerViewFunction.model.BaseFormatPokeModel
+import com.foundationPractice.recyclerViewFunction.model.pokeDetailModel.PokeDetailModel
+import com.foundationPractice.recyclerViewFunction.pokemonApiInterface.PokeDetailInfo
+import com.foundationPractice.util.AESUtil
+import com.foundationPractice.videomanager.VideoModel
 import io.reactivex.Single
 import org.xmlpull.v1.XmlPullParser
 

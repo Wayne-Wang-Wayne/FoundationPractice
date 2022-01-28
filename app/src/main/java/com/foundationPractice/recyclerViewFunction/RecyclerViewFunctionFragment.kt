@@ -1,4 +1,4 @@
-package com.setDDG.recyclerViewFunction
+package com.foundationPractice.recyclerViewFunction
 
 import android.content.Context
 import android.os.Bundle

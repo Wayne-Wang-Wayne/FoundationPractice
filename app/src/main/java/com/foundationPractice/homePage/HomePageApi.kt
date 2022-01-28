@@ -1,4 +1,4 @@
-package com.setDDG.homePage
+package com.foundationPractice.homePage
 
 
 

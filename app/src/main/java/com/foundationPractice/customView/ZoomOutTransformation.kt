@@ -1,4 +1,4 @@
-package com.setDDG.customView
+package com.foundationPractice.customView
 
 import android.view.View
 import androidx.viewpager.widget.ViewPager

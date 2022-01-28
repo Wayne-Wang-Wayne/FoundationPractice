@@ -1,4 +1,4 @@
-package com.setDDG.recyclerViewFunction.model.pokeDetailModel
+package com.foundationPractice.recyclerViewFunction.model.pokeDetailModel
 
 data class Type(
     val slot: Int,

@@ -1,4 +1,4 @@
-package com.setDDG.gridLayoutRecyclerViewFunction
+package com.foundationPractice.gridLayoutRecyclerViewFunction
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.util.loadImage
+import com.foundationPractice.util.loadImage
 import kotlinx.android.synthetic.main.item_project_news_list.view.*
 
 

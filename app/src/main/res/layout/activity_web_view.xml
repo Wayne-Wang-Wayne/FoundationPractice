@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.setDDG.webview.WebViewActivity">
+    tools:context="com.foundationPractice.webview.WebViewActivity">
 
-    <com.setDDG.customView.CustomToolbar
+    <com.foundationPractice.customView.CustomToolbar
         android:id="@+id/vWebViewToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

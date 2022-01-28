@@ -1,4 +1,4 @@
-package com.setDDG.basicClass
+package com.foundationPractice.basicClass
 
 import android.app.Application
 import androidx.annotation.NonNull

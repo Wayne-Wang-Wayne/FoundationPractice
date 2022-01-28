@@ -1,4 +1,4 @@
-package com.setDDG.dialogFunction
+package com.foundationPractice.dialogFunction
 
 import android.app.Dialog
 import android.content.Context
@@ -8,8 +8,7 @@ import android.view.Gravity
 import android.view.Window
 import android.view.WindowManager
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.util.loadImage
-import kotlinx.android.synthetic.main.fragment_glide_function.*
+import com.foundationPractice.util.loadImage
 import kotlinx.android.synthetic.main.test_dialog_one.*
 
 class TestDialogOne(context: Context) : Dialog(context) {

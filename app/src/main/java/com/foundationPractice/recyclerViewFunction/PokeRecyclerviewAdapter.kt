@@ -1,4 +1,4 @@
-package com.setDDG.recyclerViewFunction
+package com.foundationPractice.recyclerViewFunction
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.customView.CustomTabLayout
-import com.setDDG.recyclerViewFunction.model.BaseFormatPokeModel
-import com.setDDG.util.loadImage
+import com.foundationPractice.customView.CustomTabLayout
+import com.foundationPractice.recyclerViewFunction.model.BaseFormatPokeModel
+import com.foundationPractice.util.loadImage
 import kotlinx.android.synthetic.main.item_pokemon_image.view.*
 import kotlinx.android.synthetic.main.item_pokemon_type.view.*
 

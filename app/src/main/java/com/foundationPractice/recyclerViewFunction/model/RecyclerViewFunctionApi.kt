@@ -1,4 +1,4 @@
-package com.setDDG.recyclerViewFunction.model
+package com.foundationPractice.recyclerViewFunction.model
 
 interface RecyclerViewFunctionApi{
 

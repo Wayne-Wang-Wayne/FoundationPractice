@@ -1,4 +1,4 @@
-package com.setDDG.customView;
+package com.foundationPractice.customView;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.setDDG.util.PhoneSizeUtil;
+import com.foundationPractice.util.PhoneSizeUtil;
 
 public class CarouseViewPager extends ScrollAbleViewPager {
     public CarouseViewPager(@NonNull Context context) {

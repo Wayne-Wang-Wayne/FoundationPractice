@@ -1,4 +1,4 @@
-package com.setDDG.webview
+package com.foundationPractice.webview
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -19,8 +19,8 @@ import androidx.webkit.WebSettingsCompat.DARK_STRATEGY_PREFER_WEB_THEME_OVER_USE
 import androidx.webkit.WebViewFeature
 import com.rockex6.practiceappfoundation.R
 import com.rockex6.practiceappfoundation.databinding.ActivityWebViewBinding
-import com.setDDG.webview.viewmodel.WebViewModel
-import com.setDDG.util.StatusBarUtil
+import com.foundationPractice.webview.viewmodel.WebViewModel
+import com.foundationPractice.util.StatusBarUtil
 
 
 

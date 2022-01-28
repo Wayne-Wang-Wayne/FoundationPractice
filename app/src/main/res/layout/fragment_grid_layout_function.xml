@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/_80dp"
-    tools:context="com.setDDG.gridLayoutRecyclerViewFunction.GridLayoutFunctionFragment">
+    tools:context="com.foundationPractice.gridLayoutRecyclerViewFunction.GridLayoutFunctionFragment">
 
-    <com.setDDG.customView.CustomRecyclerView
+    <com.foundationPractice.customView.CustomRecyclerView
         android:id="@+id/pokeRecyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

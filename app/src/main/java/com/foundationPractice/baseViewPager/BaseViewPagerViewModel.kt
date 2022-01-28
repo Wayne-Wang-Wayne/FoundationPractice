@@ -1,10 +1,10 @@
-package com.setDDG.baseViewPager
+package com.foundationPractice.baseViewPager
 
 import android.app.Application
 import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
-import com.setDDG.api.APIService
-import com.setDDG.basicClass.BaseAndroidViewModel
+import com.foundationPractice.api.APIService
+import com.foundationPractice.basicClass.BaseAndroidViewModel
 import io.reactivex.observers.DisposableSingleObserver
 
  class BaseViewPagerViewModel(@NonNull application: Application) : BaseAndroidViewModel(application) {

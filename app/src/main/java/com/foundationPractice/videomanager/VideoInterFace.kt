@@ -1,4 +1,4 @@
-package com.setDDG.videomanager
+package com.foundationPractice.videomanager
 
 interface VideoInterFace {
     fun onVideoEnd()

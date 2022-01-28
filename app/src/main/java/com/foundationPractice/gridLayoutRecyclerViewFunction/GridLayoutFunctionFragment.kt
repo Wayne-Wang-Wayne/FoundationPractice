@@ -1,4 +1,4 @@
-package com.setDDG.gridLayoutRecyclerViewFunction
+package com.foundationPractice.gridLayoutRecyclerViewFunction
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.glideFunction.GlideFunctionFragment
-import com.setDDG.recyclerViewFunction.CustomLinearLayoutManager
-import com.setDDG.recyclerViewFunction.PokeRecyclerviewAdapter
 import kotlinx.android.synthetic.main.fragment_grid_layout_function.*
 
 class GridLayoutFunctionFragment : Fragment() {

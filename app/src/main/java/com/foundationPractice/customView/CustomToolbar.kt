@@ -1,4 +1,4 @@
-package com.setDDG.customView
+package com.foundationPractice.customView
 
 import android.app.Activity
 import android.content.Context
@@ -11,8 +11,8 @@ import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.rockex6.practiceappfoundation.R
-import com.setDDG.util.IntentUtil
-import com.setDDG.util.PhoneSizeUtil
+import com.foundationPractice.util.IntentUtil
+import com.foundationPractice.util.PhoneSizeUtil
 
 class CustomToolbar : Toolbar {
 

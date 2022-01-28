@@ -1,4 +1,4 @@
-package com.setDDG.basicClass
+package com.foundationPractice.basicClass
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

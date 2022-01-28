@@ -3,6 +3,9 @@
     package="com.rockex6.practiceappfoundation">
     <uses-permission android:name="android.permission.INTERNET"/>
 
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+
     <queries>
         <package android:name="com.android.chrome" />
     </queries>
@@ -15,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
         <activity
-            android:name="com.setDDG.homePage.HomePageActivity"
+            android:name="com.foundationPractice.homePage.HomePageActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:launchMode="singleTask"
@@ -28,10 +31,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.setDDG.webview.WebViewActivity"
+            android:name="com.foundationPractice.webview.WebViewActivity"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan">
         </activity>
+
     </application>
 
 </manifest>

@@ -1,7 +1,6 @@
-package com.setDDG.recyclerViewFunction.pokemonApiInterface
+package com.foundationPractice.recyclerViewFunction.pokemonApiInterface
 
-import com.setDDG.recyclerViewFunction.model.pokeDetailModel.PokeDetailModel
-import com.setDDG.recyclerViewFunction.model.pokeModel.PokeModel
+import com.foundationPractice.recyclerViewFunction.model.pokeDetailModel.PokeDetailModel
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path

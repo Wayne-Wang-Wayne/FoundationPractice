@@ -3,8 +3,21 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
 
 android {
+
+    signingConfigs {
+        release {
+            v1SigningEnabled true
+            v2SigningEnabled true
+            keyAlias 'key0'
+            keyPassword 'w0961117186'
+            storeFile file('/Users/10110014/Desktop/sanlih_keystore/practiceKey')
+            storePassword 'w0961117186'
+        }
+    }
     compileSdk 31
 
     defaultConfig {
@@ -15,6 +28,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
     }
 
     buildTypes {
@@ -67,7 +81,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.+'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
@@ -139,8 +153,8 @@ dependencies {
     implementation "com.google.android.exoplayer:exoplayer-ui:$exoplayer_version"
 
     //firebase
-    implementation 'com.google.firebase:firebase-analytics-ktx:17.5.0'
-    implementation 'com.google.firebase:firebase-crashlytics-ktx:17.2.1'
+    implementation 'com.google.firebase:firebase-analytics-ktx:20.0.2'
+
 
     //seekbar
     implementation 'com.github.warkiz.tickseekbar:tickseekbar:0.1.4'
@@ -156,7 +170,8 @@ dependencies {
 
     //firebase analytics
     implementation platform('com.google.firebase:firebase-bom:29.0.4')
-    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx:20.0.2'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.7'
 
 
     //qr code
