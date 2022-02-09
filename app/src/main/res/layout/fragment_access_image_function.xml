@@ -22,6 +22,7 @@
         android:text="傳送照片"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cameraImage"/>
+        app:layout_constraintTop_toBottomOf="@+id/cameraImage"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,10 @@
 package com.foundationPractice.accessImageFunction
 
+import android.Manifest
 import android.app.Activity.RESULT_OK
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.database.Cursor
 import android.graphics.BitmapFactory
 import android.net.Uri
@@ -14,6 +16,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.rockex6.practiceappfoundation.R
 import android.graphics.Bitmap
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
+import com.foundationPractice.util.viewScaleCustomerHeight
 import kotlinx.android.synthetic.main.fragment_access_image_function.*
 import kotlin.math.roundToInt
 
@@ -23,6 +29,7 @@ class AccessImageFunctionFragment : Fragment() {
 
     private val RESULT_LOAD_IMAGE = 7788
     private lateinit var mContext: Context
+    private lateinit var requestPermissionLauncher : ActivityResultLauncher<String>
 
 
     override fun onAttach(context: Context) {
@@ -43,11 +50,28 @@ class AccessImageFunctionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+         requestPermissionLauncher =
+            registerForActivityResult(ActivityResultContracts.RequestPermission()
+            ) { isGranted: Boolean ->
+                if (isGranted) {
+                    takePictureButton.visibility = View.VISIBLE
+                } else {
+                    takePictureButton.visibility = View.GONE
+                }
+            }
+
+
+
         takePictureButton.setOnClickListener {
             val i = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             startActivityForResult(i, RESULT_LOAD_IMAGE)
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        askPermission()
     }
 
 
@@ -104,6 +128,26 @@ class AccessImageFunctionFragment : Fragment() {
             inSampleSize = if (heightRatio < widthRatio) heightRatio else widthRatio
         }
         return inSampleSize
+    }
+
+
+    private fun askPermission(){
+
+        when {
+            ContextCompat.checkSelfPermission(
+                mContext,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            ) == PackageManager.PERMISSION_GRANTED -> {
+                takePictureButton.visibility = View.VISIBLE
+            }
+
+            else -> {
+                // You can directly ask for the permission.
+                // The registered ActivityResultCallback gets the result of this request.
+                requestPermissionLauncher.launch(
+                    Manifest.permission.READ_EXTERNAL_STORAGE)
+            }
+        }
     }
 
 
