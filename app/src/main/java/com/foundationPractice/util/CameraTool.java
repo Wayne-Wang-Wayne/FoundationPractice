@@ -1,4 +1,9 @@
-package com.set.newsapp.Utils;
+package com.foundationPractice.util;
+
+import static android.Manifest.permission.CAMERA;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.RECORD_AUDIO;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -24,10 +29,9 @@ import android.widget.RelativeLayout;
 
 import androidx.core.app.ActivityCompat;
 
+import com.rockex6.practiceappfoundation.R;
 import com.sandrios.sandriosCamera.internal.SandriosCamera;
 import com.sandrios.sandriosCamera.internal.configuration.CameraConfiguration;
-import com.set.newsapp.R;
-import com.set.newsapp.broke.BrokeView;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -35,18 +39,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import static android.Manifest.permission.CAMERA;
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.RECORD_AUDIO;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
-
 /**
  * Created by user on 2017/5/25.
  */
 
 public class CameraTool {
-    private Context mContext;
-    private Activity mActivity;
+    private final Context mContext;
+    private final Activity mActivity;
 
     public static final int MAX_ATTACHMENT_UPLOAD_SIZE = (5 * 1024 * 1024);  //上傳文件5MB限制
 
@@ -209,10 +208,7 @@ public class CameraTool {
 
     //判斷文件大小
     public boolean FormatFileSize(long fileS) {
-        if (fileS > MAX_ATTACHMENT_UPLOAD_SIZE) {
-            return false;
-        }
-        return true;
+        return fileS <= MAX_ATTACHMENT_UPLOAD_SIZE;
     }
 
     //從路徑取得文件名稱
@@ -223,7 +219,7 @@ public class CameraTool {
 
 
     //取得選擇圖片路徑
-    public void getPath(Context context, Uri uri, BrokeView.BrokeInfoView brokeInfoView) {
+    public void getPath(Context context, Uri uri, SetCameraImageCallback setCameraImageCallback) {
         ((Activity) context).runOnUiThread(() -> {
             try (ParcelFileDescriptor pfd = context.getContentResolver().openFileDescriptor(uri, "r")) {
                 if (pfd != null) {
@@ -244,7 +240,7 @@ public class CameraTool {
                         output.write(buffer, 0, read);
                     }
                     output.flush();
-                    brokeInfoView.onFileLoad(f.getPath());
+                    setCameraImageCallback.onFileLoad(f.getPath());
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -373,4 +369,12 @@ public class CameraTool {
     public boolean isGoogleDrive(Uri uri) {
         return String.valueOf(uri).toLowerCase().contains("com.google.android.apps");
     }
+    public interface SetCameraImageCallback {
+        void onFileLoad(String path);
+    }
+
+
 }
+
+
+

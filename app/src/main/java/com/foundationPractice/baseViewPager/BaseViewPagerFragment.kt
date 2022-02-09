@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
-import com.foundationPractice.cameraFunction.CameraFunctionFragment
+import com.foundationPractice.accessImageFunction.AccessImageFunctionFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.rockex6.practiceappfoundation.R
 import com.foundationPractice.carouselPagerFunction.CarouselPagerFunctionFragment
@@ -100,7 +100,7 @@ open class BaseViewPagerFragment : Fragment() {
                         "dialog" -> newsListFragments.add(
                             DialogFunctionFragment.newInstance())
                         "camera" -> newsListFragments.add(
-                            CameraFunctionFragment.newInstance())
+                            AccessImageFunctionFragment.newInstance())
                     }
 
                 }

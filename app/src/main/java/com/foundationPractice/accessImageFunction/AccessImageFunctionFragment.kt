@@ -1,4 +1,4 @@
-package com.foundationPractice.cameraFunction
+package com.foundationPractice.accessImageFunction
 
 import android.app.Activity.RESULT_OK
 import android.content.Context
@@ -105,6 +105,8 @@ class AccessImageFunctionFragment : Fragment() {
         }
         return inSampleSize
     }
+
+
 
 
 }

@@ -1,5 +1,6 @@
 package com.foundationPractice.homePage
 
+import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.ViewGroup
@@ -25,6 +26,9 @@ class HomePageActivity : AppCompatActivity(), BottomBarOnClick {
     private var mMenu: Menu? = null
     private lateinit var homePageViewModel: HomePageViewModel
 
+    companion object {
+
+    }
     override fun onStart() {
         super.onStart()
         StatusBarUtil.setStatusBar(window, R.color.white)

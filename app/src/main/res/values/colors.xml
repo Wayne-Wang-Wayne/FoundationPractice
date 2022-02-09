@@ -72,4 +72,8 @@
     <color name="tab_indicator_outside_ring">#6ea1ff</color>
     <color name="tab_indicator_inside_ring">#FFFFFF</color>
     <color name="tab_indicator_default">#b3b3b3</color>
+
+    <color name="broke_info_pick_file_bg">#FFFFFF</color>
+    <color name="broke_info_pick_file_text">#FFFFFF</color>
+    <color name="divide">#686868</color>
 </resources>
