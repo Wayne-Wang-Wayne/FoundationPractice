@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-mdpi/shape_video_white_corner.xml" value="0.26197916666666665" />
+        <entry key="app/src/main/res/drawable-xhdpi/bg_tab_select.xml" value="0.2703125" />
+        <entry key="app/src/main/res/drawable-xhdpi/selector_bottom_bar_title.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/drawable/bg_tab_select.xml" value="0.21481481481481482" />
+        <entry key="app/src/main/res/drawable/image_corner.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/drawable/seekbar_youtube.xml" value="0.26197916666666665" />
+        <entry key="app/src/main/res/drawable/seekbar_youtube_thumb.xml" value="0.26197916666666665" />
+        <entry key="app/src/main/res/drawable/shape_video_white_corner.xml" value="0.26197916666666665" />
+        <entry key="app/src/main/res/drawable/tab_indicator_default.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/drawable/tab_indicator_selected.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/drawable/tab_selector.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.24166666666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_web_view.xml" value="0.24166666666666667" />
+        <entry key="app/src/main/res/layout/dialog_select_photo.xml" value="0.3494791666666667" />
+        <entry key="app/src/main/res/layout/fragment_access_image_function.xml" value="0.259375" />
+        <entry key="app/src/main/res/layout/fragment_base_view_pager.xml" value="0.37552083333333336" />
+        <entry key="app/src/main/res/layout/fragment_camera_function.xml" value="0.28854166666666664" />
+        <entry key="app/src/main/res/layout/fragment_carousel_pager_function.xml" value="0.21927083333333333" />
+        <entry key="app/src/main/res/layout/fragment_carousel_pager_item.xml" value="0.23645833333333333" />
+        <entry key="app/src/main/res/layout/fragment_dialog_function.xml" value="0.2375" />
+        <entry key="app/src/main/res/layout/fragment_glide_function.xml" value="0.23645833333333333" />
+        <entry key="app/src/main/res/layout/fragment_grid_layout_function.xml" value="0.18541666666666667" />
+        <entry key="app/src/main/res/layout/fragment_news.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_recycler_view_function.xml" value="0.2078125" />
+        <entry key="app/src/main/res/layout/fragment_test_list.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_weather_view_function.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/layout/fragment_web_view_function.xml" value="0.37552083333333336" />
+        <entry key="app/src/main/res/layout/fragment_y_t_player_function.xml" value="0.37552083333333336" />
+        <entry key="app/src/main/res/layout/item_bottom_bar.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/item_exoplayer_controller.xml" value="0.24166666666666667" />
+        <entry key="app/src/main/res/layout/item_pokemon_image.xml" value="0.2078125" />
+        <entry key="app/src/main/res/layout/item_pokemon_type.xml" value="0.2078125" />
+        <entry key="app/src/main/res/layout/item_project_news_list.xml" value="0.18541666666666667" />
+        <entry key="app/src/main/res/layout/item_tab.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_video_list.xml" value="0.178125" />
+        <entry key="app/src/main/res/layout/item_youtube_controller.xml" value="0.24166666666666667" />
+        <entry key="app/src/main/res/layout/menu_home_toolbar.xml" value="0.37552083333333336" />
+        <entry key="app/src/main/res/layout/retry_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/test_dialog_one.xml" value="0.2375" />
+        <entry key="app/src/main/res/layout/toolbar_layout_with_title.xml" value="0.37552083333333336" />
+        <entry key="app/src/main/res/menu/menu_content_toolbar.xml" value="0.24166666666666667" />
+        <entry key="app/src/main/res/menu/menu_home_toolbar.xml" value="0.37552083333333336" />
+        <entry key="app/src/main/res/menu/menu_news_content_toolbar.xml" value="0.24166666666666667" />
+        <entry key="app/src/main/res/xml/menu_home_bottom_bar.xml" value="0.3338541666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
