@@ -30,8 +30,7 @@ class AccessImageFunctionFragment : Fragment() {
     private val RESULT_LOAD_IMAGE = 7788
     private lateinit var mContext: Context
     private lateinit var requestPermissionLauncher : ActivityResultLauncher<String>
-
-
+    
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context
