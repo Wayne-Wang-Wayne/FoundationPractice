@@ -67,6 +67,7 @@ class AccessImageFunctionFragment : Fragment() {
             startActivityForResult(i, RESULT_LOAD_IMAGE)
         }
 
+        
     }
 
     override fun onResume() {
