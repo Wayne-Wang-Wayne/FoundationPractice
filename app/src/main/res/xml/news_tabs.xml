@@ -27,4 +27,7 @@
     <item
         id="camera"
         title="camera" />
+    <item
+        id="flexboxLayout"
+        title="flexboxLayout" />
 </xml>

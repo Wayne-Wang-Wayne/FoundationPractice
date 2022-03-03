@@ -184,4 +184,8 @@ dependencies {
     implementation 'com.github.MatteoBattilana:WeatherView:3.0.0'
     //相機SDK
     implementation 'com.sandrios.android:sandriosCamera:1.2.6'
+    //motionLayout
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    //flexboxLayout
+    implementation 'com.google.android:flexbox:0.2.5'
 }

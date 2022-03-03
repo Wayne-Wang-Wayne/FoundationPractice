@@ -24,8 +24,10 @@
         <entry key="app/src/main/res/layout/fragment_carousel_pager_function.xml" value="0.21927083333333333" />
         <entry key="app/src/main/res/layout/fragment_carousel_pager_item.xml" value="0.23645833333333333" />
         <entry key="app/src/main/res/layout/fragment_dialog_function.xml" value="0.2375" />
+        <entry key="app/src/main/res/layout/fragment_flexbox_layout.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_glide_function.xml" value="0.23645833333333333" />
         <entry key="app/src/main/res/layout/fragment_grid_layout_function.xml" value="0.18541666666666667" />
+        <entry key="app/src/main/res/layout/fragment_motion_layout.xml" value="0.2234375" />
         <entry key="app/src/main/res/layout/fragment_news.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_recycler_view_function.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/fragment_test_list.xml" value="0.25" />

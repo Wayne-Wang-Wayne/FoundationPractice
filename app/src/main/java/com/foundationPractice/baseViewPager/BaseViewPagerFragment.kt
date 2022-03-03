@@ -17,6 +17,7 @@ import com.foundationPractice.carouselPagerFunction.CarouselPagerFunctionFragmen
 import com.foundationPractice.dialogFunction.DialogFunctionFragment
 import com.foundationPractice.glideFunction.GlideFunctionFragment
 import com.foundationPractice.gridLayoutRecyclerViewFunction.GridLayoutFunctionFragment
+import com.foundationPractice.flexboxLayoutFunction.FlexboxLayoutFragment
 import com.foundationPractice.recyclerViewFunction.RecyclerViewFunctionFragment
 import com.foundationPractice.weatherViewFunction.WeatherViewFunctionFragment
 import com.foundationPractice.webViewFunction.WebViewFunctionFragment
@@ -101,6 +102,8 @@ open class BaseViewPagerFragment : Fragment() {
                             DialogFunctionFragment.newInstance())
                         "camera" -> newsListFragments.add(
                             AccessImageFunctionFragment.newInstance())
+                        "flexboxLayout" -> newsListFragments.add(
+                            FlexboxLayoutFragment.newInstance())
                     }
 
                 }
